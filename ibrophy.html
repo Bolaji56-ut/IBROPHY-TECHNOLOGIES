@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101B35">
+<title>IBROPHY Technologies | Student Project Ideas</title>
+<meta name="description" content="Discover familiar student project ideas across engineering, computing, sciences, agriculture, health, environmental studies and more. Customize your project with IBROPHY Technologies.">
+
+<style>
+:root {
+  --navy: #101B35;
+  --navy-light: #1B2B4B;
+  --blue: #1769E0;
+  --blue-dark: #1054BA;
+  --teal: #12B886;
+  --teal-light: #E3FAF2;
+  --bg: #F4F7FB;
+  --white: #FFFFFF;
+  --text: #182338;
+  --muted: #64748B;
+  --border: #E2E8F0;
+  --shadow: 0 12px 35px rgba(16, 27, 53, .08);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+img { max-width: 100%; }
+.container { width: min(1160px, 92%); margin: auto; }
+.section { padding: 76px 0; }
+.section-heading { margin-bottom: 28px; }
+.eyebrow {
+  color: var(--blue);
+  text-transform: uppercase;
+  font-size: .76rem;
+  letter-spacing: .12em;
+  font-weight: 800;
+}
+h1, h2, h3, p { margin-top: 0; }
+h2 { color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.45rem); line-height: 1.2; }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+
+.topbar {
+  background: var(--navy);
+  color: #E7EDF8;
+  padding: 8px 0;
+  font-size: .82rem;
+}
+.topbar-inner, .topbar-links, .nav-inner, .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.topbar-links { justify-content: flex-end; flex-wrap: wrap; }
+.topbar a:hover { color: #69E7C1; }
+
+header {
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+}
+.nav-inner { min-height: 76px; }
+.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo {
+  width: 45px; height: 45px;
+  background: var(--navy);
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+}
+.logo svg { width: 34px; height: 34px; }
+.brand-name { font-weight: 850; color: var(--navy); font-size: 1.02rem; line-height: 1.2; }
+.brand-sub { font-size: .68rem; color: var(--muted); letter-spacing: .06em; }
+.nav-links { gap: 23px; font-size: .9rem; font-weight: 650; }
+.nav-links a:hover { color: var(--blue); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.menu-toggle {
+  display: none; background: #EEF3FA; border: 0;
+  padding: 10px 12px; border-radius: 10px; color: var(--navy);
+}
+
+.btn {
+  border: 0;
+  border-radius: 11px;
+  padding: 12px 17px;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform .18s, background .18s, box-shadow .18s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--blue); color: white; box-shadow: 0 6px 16px #1769E029; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-dark { background: var(--navy); color: white; }
+.btn-dark:hover { background: var(--navy-light); }
+.btn-outline { background: white; color: var(--navy); border: 1px solid var(--border); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-teal { background: var(--teal); color: var(--navy); }
+.btn-sm { padding: 9px 12px; font-size: .84rem; }
+.btn-block { width: 100%; }
+
+.hero {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  background:
+    linear-gradient(105deg, rgba(10,20,42,.97), rgba(16,39,77,.88) 58%, rgba(14,93,107,.65)),
+    url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1900&q=85") center/cover;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px; height: 400px;
+  border: 1px solid #FFFFFF16;
+  border-radius: 50%;
+  right: -100px; top: -180px;
+  box-shadow: 0 0 0 50px #FFFFFF08, 0 0 0 100px #FFFFFF05;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  min-height: 490px;
+  display: grid; grid-template-columns: 1.2fr .8fr;
+  align-items: center; gap: 48px; padding-top: 55px; padding-bottom: 55px;
+}
+.hero .eyebrow { color: #69E7C1; }
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.35rem);
+  line-height: 1.05; letter-spacing: -.045em;
+  color: white; margin: 14px 0 20px;
+}
+.hero h1 span { color: #65E6BD; }
+.hero-copy { color: #D5DFEF; font-size: 1.06rem; max-width: 620px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0; }
+.hero .btn-outline { background: #FFFFFF12; color: white; border-color: #FFFFFF50; }
+.hero .btn-outline:hover { background: #FFFFFF20; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 23px; }
+.hero-tags span {
+  border: 1px solid #FFFFFF30; color: #E7EDF8;
+  padding: 6px 10px; border-radius: 100px; font-size: .78rem;
+  background: #FFFFFF08;
+}
+.hero-panel {
+  background: #FFFFFF12;
+  border: 1px solid #FFFFFF30;
+  border-radius: 22px; padding: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 70px #00000020;
+}
+.hero-panel h3 { margin-bottom: 5px; color: white; }
+.hero-panel > p { color: #C9D6E9; font-size: .9rem; }
+.hero-feature {
+  display: flex; gap: 13px; align-items: flex-start;
+  padding: 13px 0; border-bottom: 1px solid #FFFFFF1F;
+}
+.hero-feature:last-child { border-bottom: 0; }
+.feature-icon {
+  display: grid; place-items: center; flex-shrink: 0;
+  width: 42px; height: 42px; border-radius: 12px;
+  background: #12B88622; color: #69E7C1; font-size: 1.2rem;
+}
+.hero-feature strong { display: block; color: white; font-size: .94rem; }
+.hero-feature small { color: #C9D6E9; }
+
+.trust-strip { background: white; border-bottom: 1px solid var(--border); }
+.trust-inner {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 20px 0;
+}
+.trust-item { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--navy); font-weight: 700; font-size: .9rem; }
+.trust-item span { color: var(--teal); font-size: 1.2rem; }
+
+.find-section { background: var(--bg); }
+.filter-panel {
+  background: white; padding: 22px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); margin-bottom: 25px;
+}
+.search-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr auto; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-size: .83rem; font-weight: 750; color: var(--navy); }
+.field input, .field select, .field textarea, .search-input {
+  width: 100%; min-width: 0;
+  border: 1px solid #D8E1ED; border-radius: 10px;
+  padding: 12px 13px; background: white; color: var(--text);
+  outline: none; transition: border .2s, box-shadow .2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus, .search-input:focus {
+  border-color: var(--blue); box-shadow: 0 0 0 3px #1769E018;
+}
+.filter-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px; margin-top: 17px;
+}
+.quick-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  background: #F1F5FA; border: 1px solid transparent; color: #475569;
+  padding: 7px 12px; border-radius: 100px; font-size: .82rem; font-weight: 700;
+}
+.chip:hover, .chip.active { background: #E9F1FF; border-color: #B8D2FF; color: var(--blue); }
+.result-count { color: var(--muted); font-size: .88rem; }
+
+.faculty-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.faculty-card {
+  text-align: left; padding: 16px 14px; min-height: 124px;
+  border: 1px solid var(--border); background: white; border-radius: 15px;
+  transition: transform .18s, box-shadow .18s, border .18s;
+}
+.faculty-card:hover { transform: translateY(-3px); border-color: #AFCBFA; box-shadow: var(--shadow); }
+.faculty-card.active { border-color: var(--blue); background: #EFF5FF; box-shadow: 0 0 0 2px #1769E015; }
+.faculty-icon {
+  width: 39px; height: 39px; border-radius: 12px;
+  display: grid; place-items: center; margin-bottom: 10px;
+  color: var(--blue); background: #EAF2FF; font-size: 1.15rem;
+}
+.faculty-card strong { display: block; color: var(--navy); font-size: .91rem; line-height: 1.3; }
+.faculty-card small { display: block; color: var(--muted); font-size: .76rem; margin-top: 4px; }
+
+.project-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin: 32px 0 17px;
+}
+.project-toolbar h3 { color: var(--navy); margin: 0; font-size: 1.25rem; }
+.project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 19px; }
+.project-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; min-width: 0;
+  transition: transform .2s, box-shadow .2s;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.project-cover {
+  min-height: 122px; padding: 17px;
+  background: linear-gradient(135deg, var(--navy), #234D82);
+  color: white; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.project-cover::after {
+  content: ""; width: 155px; height: 155px; border-radius: 50%;
+  position: absolute; top: -75px; right: -30px;
+  border: 1px solid #FFFFFF35; box-shadow: 0 0 0 25px #FFFFFF08, 0 0 0 50px #FFFFFF05;
+}
+.project-cover.green { background: linear-gradient(135deg,#104C4A,#167F79); }
+.project-cover.blue { background: linear-gradient(135deg,#174E9D,#287CE0); }
+.project-cover.purple { background: linear-gradient(135deg,#41326D,#7664BD); }
+.project-cover.orange { background: linear-gradient(135deg,#854A25,#D78A40); }
+.project-cover.teal { background: linear-gradient(135deg,#115A65,#139DA0); }
+.project-emoji { font-size: 2.2rem; position: relative; z-index: 1; }
+.save-btn {
+  position: absolute; z-index: 2; right: 13px; top: 13px;
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border-radius: 50%; border: 1px solid #FFFFFF45;
+  background: #101B3540; color: white; font-size: 1.1rem;
+}
+.save-btn.saved { background: white; color: #E54868; }
+.project-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tag {
+  display: inline-block; background: #EEF4FF; color: #225CB5;
+  border-radius: 6px; padding: 4px 7px; font-size: .7rem; font-weight: 800;
+}
+.tag.teal { background: var(--teal-light); color: #087A59; }
+.project-body h3 { color: var(--navy); font-size: 1.05rem; line-height: 1.35; margin-bottom: 8px; }
+.project-body p { color: var(--muted); font-size: .88rem; margin-bottom: 13px; }
+.project-meta { font-size: .78rem; color: #52647A; margin-top: auto; padding-top: 9px; }
+.project-actions { display: flex; gap: 8px; margin-top: 14px; }
+.project-actions .btn { flex: 1; padding: 10px 8px; font-size: .8rem; }
+.empty-state {
+  background: white; border: 1px dashed #B9C8DC;
+  padding: 35px 20px; text-align: center; border-radius: var(--radius);
+}
+.empty-state .empty-icon { font-size: 2.2rem; margin-bottom: 8px; }
+.empty-state h3 { color: var(--navy); }
+.empty-state p { color: var(--muted); max-width: 560px; margin: 0 auto 17px; }
+.hidden { display: none !important; }
+
+.how-section { background: white; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.step-card { padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); }
+.step-number {
+  width: 45px; height: 45px; border-radius: 14px; display: grid;
+  place-items: center; background: #E9F1FF; color: var(--blue);
+  font-weight: 900; margin-bottom: 16px;
+}
+.step-card h3 { color: var(--navy); margin-bottom: 8px; }
+.step-card p { color: var(--muted); font-size: .92rem; margin-bottom: 0; }
+
+.custom-section { padding: 0 0 76px; background: white; }
+.custom-banner {
+  background: linear-gradient(120deg, var(--navy), #183C69 72%, #136C70);
+  color: white; padding: 34px; border-radius: 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 25px;
+}
+.custom-banner h2 { color: white; margin-bottom: 8px; }
+.custom-banner p { color: #D5E1F0; margin-bottom: 0; max-width: 650px; }
+
+.request-section { background: var(--bg); }
+.request-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; align-items: start; }
+.request-copy { padding-top: 10px; }
+.request-copy h2 { margin: 12px 0; }
+.contact-points { display: grid; gap: 12px; margin-top: 24px; }
+.contact-point { display: flex; gap: 12px; align-items: center; }
+.contact-point .feature-icon { background: #E2F8F0; color: #087A59; }
+.form-card { background: white; padding: 25px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.field.full { grid-column: 1 / -1; }
+.field textarea { resize: vertical; min-height: 125px; }
+.form-note { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
+
+footer { background: var(--navy); color: #D4DEED; padding: 48px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 35px; }
+footer .brand-name { color: white; }
+footer .brand-sub { color: #B9C8DC; }
+footer h3 { color: white; font-size: 1rem; }
+footer p, footer a { color: #C4D0E0; font-size: .9rem; }
+footer a:hover { color: #69E7C1; }
+.footer-links { display: grid; gap: 9px; }
+.footer-bottom { border-top: 1px solid #FFFFFF20; margin-top: 30px; padding-top: 17px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .8rem; color: #9FB0C7; }
+
+/* Modal */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 300;
+  background: #081225B8; padding: 20px;
+  display: none; align-items: center; justify-content: center;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  width: min(650px, 100%); max-height: 90vh; overflow: auto;
+  background: white; border-radius: 20px; box-shadow: 0 25px 100px #0005;
+}
+.modal-head {
+  background: linear-gradient(120deg,var(--navy),#1D4A7B);
+  color: white; padding: 23px; position: relative;
+}
+.modal-head h2 { color: white; font-size: 1.5rem; padding-right: 35px; margin: 8px 0 0; }
+.modal-head p { color: #D6E3F4; font-size: .85rem; margin: 8px 0 0; }
+.modal-close {
+  position: absolute; right: 16px; top: 15px; border: 1px solid #FFFFFF50;
+  background: #FFFFFF15; color: white; border-radius: 9px; width: 38px; height: 38px; font-size: 1.2rem;
+}
+.modal-content { padding: 24px; }
+.modal-content h3 { color: var(--navy); font-size: 1rem; margin: 18px 0 7px; }
+.modal-content p, .modal-content li { color: var(--muted); font-size: .92rem; }
+.modal-content ul { padding-left: 20px; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.modal-actions .btn { flex: 1; }
+.toast {
+  position: fixed; bottom: 22px; right: 22px; z-index: 500;
+  background: var(--navy); color: white; padding: 13px 18px;
+  border-radius: 12px; box-shadow: var(--shadow);
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: .25s;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1000px) {
+  .nav-links { gap: 13px; font-size: .84rem; }
+  .faculty-grid { grid-template-columns: repeat(3,1fr); }
+  .project-grid { grid-template-columns: repeat(2,1fr); }
+  .search-row { grid-template-columns: 1fr 1fr; }
+  .hero-inner { gap: 25px; }
+}
+@media (max-width: 760px) {
+  .topbar-inner { justify-content: center; }
+  .topbar-inner > span { display: none; }
+  .nav-inner { min-height: 68px; flex-wrap: wrap; }
+  .menu-toggle { display: inline-flex; }
+  .nav-links {
+    display: none; width: 100%; order: 3; padding: 8px 0 17px;
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 11px 5px; border-top: 1px solid var(--border); }
+  .nav-actions .btn { display: none; }
+  .hero-inner { grid-template-columns: 1fr; padding-top: 60px; padding-bottom: 45px; }
+  .hero-panel { max-width: 520px; }
+  .trust-inner { grid-template-columns: repeat(2,1fr); }
+  .faculty-grid { grid-template-columns: repeat(2,1fr); }
+  .project-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .project-body { padding: 13px; }
+  .project-actions { flex-direction: column; }
+  .project-cover { min-height: 105px; }
+  .steps { grid-template-columns: 1fr; }
+  .custom-banner { flex-direction: column; align-items: flex-start; padding: 26px; }
+  .request-layout { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .container { width: 91%; }
+  .section { padding: 54px 0; }
+  .hero h1 { font-size: 2.45rem; }
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn { width: 100%; }
+  .search-row { grid-template-columns: 1fr; }
+  .filter-panel { padding: 15px; }
+  .filter-bottom { align-items: flex-start; flex-direction: column; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-cover { min-height: 130px; }
+  .project-actions { flex-direction: row; }
+  .faculty-grid { gap: 9px; }
+  .faculty-card { padding: 12px; min-height: 116px; }
+  .faculty-card strong { font-size: .84rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .form-card { padding: 18px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid > div:first-child { grid-column: auto; }
+  .modal-actions { flex-direction: column; }
+  .modal-backdrop { padding: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Practical project ideas for students across Nigeria</span>
+    <div class="topbar-links">
+      <a href="https://wa.me/2349131705072" target="_blank" rel="noopener">WhatsApp us</a>
+      <span>·</span>
+      <a href="mailto:bolajiibrophy@gmail.com">Email us</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="IBROPHY Technologies home">
+      <div class="logo">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 4V11M20 29V36M4 20H11M29 20H36M8.7 8.7L13.5 13.5M26.5 26.5L31.3 31.3M31.3 8.7L26.5 13.5M13.5 26.5L8.7 31.3" stroke="#12B886" stroke-width="2" stroke-linecap="round"/>
+          <rect x="12" y="12" width="16" height="16" rx="3" stroke="white" stroke-width="2"/>
+          <path d="M16 18H24M16 22H21" stroke="#12B886" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">IBROPHY Technologies</div>
+        <div class="brand-sub">STUDENT PROJECT DISCOVERY</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#find">Explore Projects</a>
+      <a href="#faculties">Faculties</a>
+      <a href="#how">How It Works</a>
+      <a href="#request">Custom Request</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" onclick="showSaved()">♡ Saved <span id="savedCount">0</span></button>
+      <a class="btn btn-primary btn-sm" href="#request">Request a Project</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">Your idea. Your department. Your next project.</div>
+      <h1>Find a project<br>you can <span>bring to life.</span></h1>
+      <p class="hero-copy">Explore familiar student project ideas across engineering, computing, natural sciences, agriculture, health, environmental studies and more. Find your programme, discover ideas and make your project your own.</p>
+      <div class="hero-buttons">
+        <a href="#find" class="btn btn-primary">Explore Project Ideas <span>→</span></a>
+        <a href="#request" class="btn btn-outline">Tell Us What You Need</a>
+      </div>
+      <div class="hero-tags">
+        <span>Electronics & IoT</span>
+        <span>Software & Web</span>
+        <span>Laboratory Projects</span>
+        <span>Agriculture & Environment</span>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>Start with what you know</h3>
+      <p>Popular project areas students recognize.</p>
+      <div class="hero-feature">
+        <div class="feature-icon">⚡</div>
+        <div><strong>Electronics & Engineering</strong><small>Streetlights, solar chargers, energy monitoring</small></div>
+      </div>
+      <div class="hero-feature">
+        <div class="feature-icon">⌘</div>
+        <div><strong>Computing & Software</strong><small>Attendance, result portals, management systems</small></div>
+      </div>
+      <div class="hero-feature">
+        <div class="feature-icon">⚗</div>
+        <div><strong>Science & Laboratory</strong><small>pH, temperature, sample and incubator monitoring</small></div>
+      </div>
+      <div class="hero-feature">
+        <div class="feature-icon">🌱</div>
+        <div><strong>Agriculture & Environment</strong><small>Fish ponds, irrigation, water quality</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container trust-inner">
+    <div class="trust-item"><span>✓</span> Familiar project ideas</div>
+    <div class="trust-item"><span>✓</span> Programme-based browsing</div>
+    <div class="trust-item"><span>✓</span> Custom project requests</div>
+    <div class="trust-item"><span>✓</span> Direct support</div>
+  </div>
+</div>
+
+<section class="section find-section" id="find">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Explore the catalogue</div>
+      <h2>Find something worth bringing to life.</h2>
+      <p class="muted">Start with a familiar faculty or programme, or search for a project you already have in mind.</p>
+    </div>
+
+    <div class="filter-panel">
+      <div class="search-row">
+        <div class="field">
+          <label for="searchInput">Search project ideas</label>
+          <input id="searchInput" type="search" placeholder="e.g. smart incubator, attendance..." autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="facultySelect">Faculty</label>
+          <select id="facultySelect"><option value="">All faculties</option></select>
+        </div>
+        <div class="field">
+          <label for="programSelect">Department / Programme</label>
+          <select id="programSelect"><option value="">All programmes</option></select>
+        </div>
+        <div class="field">
+          <label for="sortSelect">Sort projects</label>
+          <select id="sortSelect">
+            <option value="popular">Most familiar first</option>
+            <option value="az">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-bottom">
+        <div class="quick-filters" id="quickFilters">
+          <button class="chip active" data-quick="all">All Projects</button>
+          <button class="chip" data-quick="engineering">Engineering</button>
+          <button class="chip" data-quick="computing">Computing</button>
+          <button class="chip" data-quick="science">Natural Sciences</button>
+          <button class="chip" data-quick="saved">Saved Projects</button>
+        </div>
+        <button class="btn btn-outline btn-sm" id="clearFilters">Reset filters</button>
+      </div>
+    </div>
+
+    <div id="faculties">
+      <div class="section-heading">
+        <h2 style="font-size:1.45rem;margin-bottom:7px">Browse by faculty</h2>
+        <p class="muted small">Choose a faculty to see relevant programmes and project ideas. Names can vary between universities.</p>
+      </div>
+      <div class="faculty-grid" id="facultyGrid"></div>
+    </div>
+
+    <div class="project-toolbar">
+      <h3 id="projectHeading">Popular student project ideas</h3>
+      <span class="result-count" id="resultCount" aria-live="polite"></span>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+    <div class="empty-state hidden" id="emptyState">
+      <div class="empty-icon">🔎</div>
+      <h3>Can't find the project you have in mind?</h3>
+      <p>Tell us your department, programme or idea. IBROPHY Technologies can discuss a custom project or help you explore a suitable direction.</p>
+      <button class="btn btn-primary" onclick="requestCustom()">Tell Us What You Really Want →</button>
+    </div>
+    <div style="text-align:center;margin-top:25px" id="moreWrap">
+      <button class="btn btn-outline" id="moreBtn">Show More Projects ↓</button>
+    </div>
+  </div>
+</section>
+
+<section class="section how-section" id="how">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Simple and student-friendly</div>
+      <h2>From an idea to your project.</h2>
+      <p class="muted">You do not need to know every technical detail before getting started.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>Choose your programme</h3>
+        <p>Browse your faculty and department, or search for a familiar project idea that fits your course.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3>Explore and customize</h3>
+        <p>Read a short explanation, save ideas you like, and tell us which features you want to add or change.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>Discuss your project</h3>
+        <p>Send a request through WhatsApp or email to discuss your needs, programme requirements and next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="custom-section">
+  <div class="container">
+    <div class="custom-banner">
+      <div>
+        <div class="eyebrow" style="color:#69E7C1">Have something else in mind?</div>
+        <h2>Don't see your exact project?</h2>
+        <p>Describe what you want to build, the programme you're studying and any features you have in mind. Let's discuss a suitable direction.</p>
+      </div>
+      <a href="#request" class="btn btn-teal">Request a Custom Project →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section request-section" id="request">
+  <div class="container request-layout">
+    <div class="request-copy">
+      <div class="eyebrow">Let's talk about your idea</div>
+      <h2>Tell us what you want to build.</h2>
+      <p class="muted">Share a project idea, select your programme and explain what you need. You can contact us through WhatsApp or email.</p>
+      <div class="contact-points">
+        <div class="contact-point">
+          <div class="feature-icon">✉</div>
+          <div><strong>Email</strong><br><a href="mailto:bolajiibrophy@gmail.com" class="muted small">bolajiibrophy@gmail.com</a></div>
+        </div>
+        <div class="contact-point">
+          <div class="feature-icon">☏</div>
+          <div><strong>WhatsApp</strong><br><a href="https://wa.me/2349131705072" target="_blank" rel="noopener" class="muted small">+234 913 170 5072</a></div>
+        </div>
+        <div class="contact-point">
+          <div class="feature-icon">☏</div>
+          <div><strong>Alternative WhatsApp</strong><br><a href="https://wa.me/2348158257399" target="_blank" rel="noopener" class="muted small">+234 815 825 7399</a></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card" id="requestForm">
+      <h3 style="color:var(--navy);margin-bottom:5px">Project enquiry form</h3>
+      <p class="muted small">Fields marked with * are required.</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="customerName">Full name *</label>
+          <input id="customerName" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="customerEmail">Email address *</label>
+          <input id="customerEmail" name="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="customerFaculty">Faculty *</label>
+          <select id="customerFaculty" name="faculty" required>
+            <option value="">Choose faculty</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="customerProgram">Department / Programme *</label>
+          <select id="customerProgram" name="program" required>
+            <option value="">Choose programme</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="customerProject">Project idea or title</label>
+          <input id="customerProject" name="project" placeholder="e.g. Fish pond water quality monitoring">
+        </div>
+        <div class="field full">
+          <label for="customerDetails">What do you want the project to do? *</label>
+          <textarea id="customerDetails" name="details" required placeholder="Describe your idea, required features, components or any special requirements..."></textarea>
+        </div>
+        <div class="field full">
+          <label for="contactPreference">Preferred contact method</label>
+          <select id="contactPreference" name="contact">
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Email">Email</option>
+            <option value="Either WhatsApp or email">Either WhatsApp or email</option>
+          </select>
+        </div>
+        <div class="field full">
+          <button type="submit" class="btn btn-primary btn-block">Prepare My Enquiry →</button>
+          <p class="form-note">Your enquiry will open in WhatsApp or your email app. Nothing is sent until you press send there.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="brand">
+          <div class="logo">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 4V11M20 29V36M4 20H11M29 20H36M8.7 8.7L13.5 13.5M26.5 26.5L31.3 31.3M31.3 8.7L26.5 13.5M13.5 26.5L8.7 31.3" stroke="#12B886" stroke-width="2" stroke-linecap="round"/>
+              <rect x="12" y="12" width="16" height="16" rx="3" stroke="white" stroke-width="2"/>
+              <path d="M16 18H24M16 22H21" stroke="#12B886" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div><div class="brand-name">IBROPHY Technologies</div><div class="brand-sub">STUDENT PROJECT DISCOVERY</div></div>
+        </a>
+        <p style="margin-top:17px;max-width:360px">Helping students explore familiar project ideas, discover practical possibilities and discuss customized project needs across different fields of study.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#find">Project catalogue</a>
+          <a href="#faculties">Browse faculties</a>
+          <a href="#how">How it works</a>
+          <a href="#request">Custom project enquiry</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="https://wa.me/2349131705072" target="_blank" rel="noopener">WhatsApp: +234 913 170 5072</a>
+          <a href="https://wa.me/2348158257399" target="_blank" rel="noopener">WhatsApp: +234 815 825 7399</a>
+          <a href="mailto:bolajiibrophy@gmail.com">bolajiibrophy@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> IBROPHY Technologies. All rights reserved.</span>
+      <span>Built for ideas worth bringing to life.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close project details">×</button>
+      <div class="project-tags" id="modalTags"></div>
+      <h2 id="modalTitle">Project title</h2>
+      <p id="modalMeta"></p>
+    </div>
+    <div class="modal-content">
+      <h3>What does this project do?</h3>
+      <p id="modalDescription"></p>
+      <h3>Basic understanding</h3>
+      <p id="modalUnderstanding"></p>
+      <h3>Possible customization</h3>
+      <p id="modalCustomization"></p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="modalRequest">Request a Build via WhatsApp</button>
+        <button class="btn btn-outline" id="modalCustomize">Customize This Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* Replace or expand these arrays to add more faculties and project ideas.
+   Projects are associated with relevant programmes, not just broad subjects. */
+
+const FACULTIES = [
+  {name:"Agriculture", icon:"🌱", programs:["Agricultural Engineering","Agricultural Economics","Agronomy","Animal Science","Aquaculture and Fisheries","Crop Science","Food Science and Technology","Soil Science"]},
+  {name:"Arts and Humanities", icon:"📚", programs:["English and Literary Studies","History and International Studies","Linguistics","Philosophy","Religious Studies","Theatre and Film Studies","Languages"]},
+  {name:"Basic Medical Sciences", icon:"🧬", programs:["Anatomy","Biochemistry","Human Physiology","Medical Biochemistry","Medical Microbiology"]},
+  {name:"Computing and Information Technology", icon:"💻", programs:["Computer Science","Computer Engineering","Cybersecurity","Data Science","Information Technology","Information Systems","Software Engineering"]},
+  {name:"Education", icon:"🎓", programs:["Educational Technology","Educational Management","Guidance and Counselling","Science Education","Computer Education","Mathematics Education","Technical Education"]},
+  {name:"Engineering", icon:"⚙️", programs:["Agricultural Engineering","Chemical Engineering","Civil Engineering","Computer Engineering","Electrical/Electronic Engineering","Mechanical Engineering","Mechatronics Engineering","Petroleum Engineering","Telecommunications Engineering"]},
+  {name:"Environmental Sciences", icon:"🏙️", programs:["Architecture","Building Technology","Estate Management","Environmental Management","Geography","Quantity Surveying","Surveying and Geoinformatics","Urban and Regional Planning"]},
+  {name:"Health Sciences", icon:"🩺", programs:["Biomedical Engineering","Medical Laboratory Science","Nursing Science","Public Health","Physiotherapy","Radiography","Health Information Management"]},
+  {name:"Law", icon:"⚖️", programs:["Law","Public and Private Law","International Law"]},
+  {name:"Management Sciences", icon:"📊", programs:["Accounting","Banking and Finance","Business Administration","Entrepreneurship","Human Resource Management","Marketing","Project Management"]},
+  {name:"Natural and Applied Sciences", icon:"🔬", programs:["Biochemistry","Biology","Biotechnology","Chemistry","Computer Science","Industrial Chemistry","Microbiology","Physics","Mathematics","Statistics","Plant Science","Zoology"]},
+  {name:"Pharmaceutical Sciences", icon:"💊", programs:["Pharmacy","Pharmacology","Pharmaceutical Chemistry","Pharmaceutics","Pharmacognosy"]},
+  {name:"Social Sciences", icon:"🌍", programs:["Economics","Mass Communication","Political Science","Psychology","Sociology","Social Work","Public Administration"]},
+  {name:"Veterinary Medicine", icon:"🐾", programs:["Veterinary Medicine","Veterinary Microbiology","Veterinary Anatomy","Animal Health"]},
+  {name:"Food and Life Sciences", icon:"🥼", programs:["Food Science and Technology","Nutrition and Dietetics","Food Microbiology","Human Nutrition"]}
+];
+
+const PROJECTS = [
+/* Computing */
+{id:"p01",title:"Student Attendance Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Computer Engineering","Computer Education"],category:"computing",emoji:"🧑‍🎓",color:"blue",description:"A digital system for recording, viewing and managing student attendance.",understanding:"Lecturers or authorized users record attendance, and students or administrators can view attendance summaries and reports.",customization:"QR-code check-in, class schedules, email notifications, analytics or a mobile-friendly interface.",popular:100},
+{id:"p02",title:"Student Result Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Information Systems"],category:"computing",emoji:"📑",color:"blue",description:"A system for entering, organizing and viewing student scores and results.",understanding:"Authorized staff enter marks while the system calculates totals and presents results according to defined rules.",customization:"GPA calculation, result approval, transcript summaries, role-based access or printable reports.",popular:99},
+{id:"p03",title:"School Fees Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Systems","Accounting"],category:"computing",emoji:"💳",color:"blue",description:"A platform for tracking school fees, payments and outstanding balances.",understanding:"The system stores fee records and helps authorized users check payment status and produce summaries.",customization:"Payment receipts, reminders, payment categories or finance dashboards.",popular:98},
+{id:"p04",title:"Library Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Information Technology","Software Engineering","Information Systems"],category:"computing",emoji:"📚",color:"blue",description:"A digital way to organize books, borrowers, loans and returns.",understanding:"Users search the book catalogue while library staff manage availability and borrowing records.",customization:"Barcode scanning, overdue alerts, online reservations or book recommendations.",popular:97},
+{id:"p05",title:"E-commerce Website",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Business Administration","Marketing"],category:"computing",emoji:"🛍️",color:"purple",description:"An online store for displaying products, accepting orders and managing customers.",understanding:"Customers browse a catalogue and submit orders while an administrator manages stock and order status.",customization:"Cart, order tracking, product reviews, payment integration or a seller dashboard.",popular:96},
+{id:"p06",title:"Hospital Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Health Information Management"],category:"computing",emoji:"🏥",color:"blue",description:"A system for organizing patient records, appointments and basic hospital administration.",understanding:"Authorized staff can register patients, schedule appointments and retrieve records while protecting private information.",customization:"Appointment reminders, pharmacy inventory, billing or reporting.",popular:95},
+{id:"p07",title:"Online Voting System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Cybersecurity","Information Technology"],category:"computing",emoji:"🗳️",color:"purple",description:"A web-based platform for managing elections and counting submitted votes.",understanding:"Eligible participants authenticate, cast a vote and see results when the election administrator releases them.",customization:"Voter verification, audit logs, election scheduling or result charts.",popular:94},
+{id:"p08",title:"Inventory Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Systems","Accounting","Business Administration"],category:"computing",emoji:"📦",color:"blue",description:"A tool for recording stock levels, incoming goods and outgoing items.",understanding:"The system updates stock records and alerts users when selected items fall below a set level.",customization:"Barcode support, supplier records, sales summaries or low-stock notifications.",popular:93},
+{id:"p09",title:"School Timetable Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Educational Technology"],category:"computing",emoji:"🗓️",color:"blue",description:"A system for preparing and viewing class timetables.",understanding:"Administrators assign classes, rooms and time slots while checking for timetable conflicts.",customization:"Automatic scheduling, lecturer availability or student timetable downloads.",popular:90},
+{id:"p10",title:"Biometric Verification and Attendance System",faculty:"Computing and Information Technology",programs:["Computer Science","Computer Engineering","Software Engineering","Cybersecurity"],category:"computing",emoji:"🪪",color:"purple",description:"A prototype that explores identity verification for attendance or access control.",understanding:"A sensor or approved verification method checks a registered identity before recording an event. Biometric data must be handled securely.",customization:"Fingerprint sensor, access logs, admin reports or alternative PIN verification.",popular:89},
+{id:"p11",title:"Hostel Allocation Management System",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Information Systems"],category:"computing",emoji:"🏠",color:"blue",description:"A system for organizing hostel applications, room allocation and occupancy.",understanding:"Students submit applications while authorized staff allocate available rooms and review occupancy.",customization:"Application status, room preferences, allocation reports or notification emails.",popular:88},
+{id:"p12",title:"Student Project Repository",faculty:"Computing and Information Technology",programs:["Computer Science","Software Engineering","Information Technology","Library and Information Science"],category:"computing",emoji:"🗂️",color:"purple",description:"A searchable catalogue for student project titles, abstracts and approved documents.",understanding:"Users search projects by programme, topic or year while administrators manage submissions and access permissions.",customization:"Supervisor review, keyword tagging, file uploads or citation exports.",popular:87},
+
+/* Electrical, Computer and Mechanical Engineering */
+{id:"p13",title:"Automatic Street Light System",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"💡",color:"orange",description:"A lighting system that switches on or adjusts lighting based on surrounding brightness.",understanding:"A light sensor detects darkness and sends a signal to control a lamp or demonstration circuit.",customization:"Motion detection, adjustable brightness, solar power or energy usage display.",popular:100},
+{id:"p14",title:"Solar-Powered Phone Charger",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechanical Engineering"],category:"engineering",emoji:"☀️",color:"orange",description:"A small solar charging prototype designed to provide USB power from sunlight.",understanding:"A solar panel provides energy through suitable regulation and charging circuitry to a compatible output.",customization:"Battery level display, portable enclosure, charge monitoring or multiple output ports.",popular:99},
+{id:"p15",title:"Automatic Changeover System",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"🔌",color:"orange",description:"A prototype that switches between two power sources under defined conditions.",understanding:"A controller monitors source availability and operates a properly rated switching mechanism. Real mains-power construction requires qualified supervision and appropriate protection.",customization:"Status indicators, delay settings, voltage monitoring or event logging.",popular:98},
+{id:"p16",title:"Smart Energy Monitoring System",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"⚡",color:"orange",description:"A system for observing electrical energy use and displaying measurements.",understanding:"Suitable sensors collect electrical measurements and a controller presents readings locally or on a dashboard.",customization:"Usage graphs, alerts, appliance-level monitoring or energy cost estimates.",popular:97},
+{id:"p17",title:"Water Level Monitoring and Pump Controller",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering","Agricultural Engineering"],category:"engineering",emoji:"🚰",color:"teal",description:"A tank monitoring prototype that indicates water level and can control a pump.",understanding:"A level sensor estimates how full a tank is and a controller displays the result or operates a low-voltage demonstration pump.",customization:"Overflow alert, phone notification, multiple tanks or water usage logging.",popular:96},
+{id:"p18",title:"Temperature-Controlled Fan System",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"🌡️",color:"orange",description:"A fan that responds to measured temperature rather than running at one fixed setting.",understanding:"A temperature sensor provides readings and a controller switches or adjusts the fan when thresholds are reached.",customization:"Speed control, temperature display, alarm or data logging.",popular:95},
+{id:"p19",title:"Smart Home Automation Prototype",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering","Computer Science"],category:"engineering",emoji:"🏡",color:"blue",description:"A prototype for controlling selected lights or appliances through a controller.",understanding:"A microcontroller receives commands or sensor readings and operates suitable low-voltage loads or properly isolated modules.",customization:"Phone dashboard, voice interface, motion sensing or scheduled operation.",popular:94},
+{id:"p20",title:"Motion-Activated Security Light",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"🚨",color:"orange",description:"A light that activates when movement is detected in a monitored area.",understanding:"A motion sensor signals a controller, which switches a demonstration light on for a set duration.",customization:"Adjustable timeout, night-only operation or alert indicator.",popular:91},
+{id:"p21",title:"DC Motor Speed Control System",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering","Mechanical Engineering"],category:"engineering",emoji:"⚙️",color:"orange",description:"A prototype for adjusting and observing the speed of a small DC motor.",understanding:"A controller varies the motor drive signal and a sensor or display can indicate operating speed.",customization:"Speed display, feedback control, load comparison or remote control.",popular:90},
+{id:"p22",title:"Obstacle-Avoiding Robot",faculty:"Engineering",programs:["Mechatronics Engineering","Computer Engineering","Electrical/Electronic Engineering","Mechanical Engineering"],category:"engineering",emoji:"🤖",color:"purple",description:"A small mobile robot that detects obstacles and changes direction.",understanding:"Distance sensors provide readings that a controller uses to guide the motors.",customization:"Line following, wireless control, mapping or object detection.",popular:89},
+{id:"p23",title:"Automatic Irrigation Controller",faculty:"Engineering",programs:["Agricultural Engineering","Electrical/Electronic Engineering","Computer Engineering","Mechatronics Engineering"],category:"engineering",emoji:"💧",color:"teal",description:"A watering prototype that responds to soil moisture or a selected schedule.",understanding:"A moisture sensor or timer tells a controller when to operate a low-voltage pump or valve.",customization:"Weather data, scheduled watering, tank-level checks or phone monitoring.",popular:88},
+{id:"p24",title:"Digital Room Temperature and Humidity Monitor",faculty:"Engineering",programs:["Computer Engineering","Electrical/Electronic Engineering","Mechatronics Engineering"],category:"engineering",emoji:"🌡️",color:"teal",description:"A device that measures room temperature and relative humidity.",understanding:"A digital sensor sends readings to a microcontroller, which displays them on a screen or dashboard.",customization:"Data logging, high-temperature alert, phone display or CO₂ sensor integration.",popular:87},
+
+/* Natural and Applied Sciences / Biology / Lab */
+{id:"p25",title:"Smart Incubator Monitoring System",faculty:"Natural and Applied Sciences",programs:["Biology","Microbiology","Biotechnology","Biochemistry","Biomedical Engineering","Medical Laboratory Science","Computer Engineering"],category:"science",emoji:"🧫",color:"green",description:"A monitoring prototype for tracking incubator temperature and selected environmental conditions.",understanding:"Sensors record conditions inside a demonstration chamber and show whether readings stay within chosen limits. It is not a substitute for a certified clinical or research incubator.",customization:"Temperature alerts, humidity monitoring, CO₂ measurement, history charts or remote viewing.",popular:100},
+{id:"p26",title:"pH Measurement and Monitoring System",faculty:"Natural and Applied Sciences",programs:["Chemistry","Biochemistry","Microbiology","Biotechnology","Environmental Management","Food Science and Technology"],category:"science",emoji:"⚗️",color:"green",description:"A project for measuring pH and showing how acidity or alkalinity changes over time.",understanding:"A suitable pH probe and interface produce readings that can be displayed and recorded. Calibration is important for meaningful measurements.",customization:"Threshold alarms, data logging, temperature compensation or water sample comparisons.",popular:99},
+{id:"p27",title:"Laboratory Sample Temperature Monitor",faculty:"Natural and Applied Sciences",programs:["Microbiology","Biochemistry","Biotechnology","Medical Laboratory Science","Pharmacy","Food Science and Technology"],category:"science",emoji:"🧪",color:"green",description:"A device for monitoring storage temperature for laboratory samples or materials.",understanding:"A sensor measures the storage environment and alerts users when readings move beyond configured limits.",customization:"Door-open alert, temperature history, remote notification or multiple sensor points.",popular:98},
+{id:"p28",title:"CO₂ and Room Air Quality Monitor",faculty:"Natural and Applied Sciences",programs:["Biology","Chemistry","Physics","Environmental Management","Biomedical Engineering","Computer Engineering"],category:"science",emoji:"🌬️",color:"teal",description:"A monitoring unit that measures carbon dioxide and selected room conditions.",understanding:"A suitable CO₂ sensor measures concentration, and the display can combine readings with temperature or humidity. Sensor type affects what is actually measured.",customization:"Ventilation reminder, classroom dashboard, trend charts or warning indicators.",popular:97},
+{id:"p29",title:"Water Quality Monitoring System",faculty:"Natural and Applied Sciences",programs:["Chemistry","Biochemistry","Microbiology","Biotechnology","Environmental Management","Aquaculture and Fisheries","Civil Engineering"],category:"science",emoji:"💧",color:"teal",description:"A prototype for observing selected water-quality indicators in samples.",understanding:"Suitable sensors or test methods can measure indicators such as pH, temperature and turbidity. These measurements alone do not establish that water is safe to drink.",customization:"Multiple sensors, sample comparison, data logging or alerts.",popular:96},
+{id:"p30",title:"Fish Pond Water Quality Monitoring",faculty:"Agriculture",programs:["Aquaculture and Fisheries","Animal Science","Agricultural Engineering","Biology","Microbiology","Environmental Management"],category:"agriculture",emoji:"🐟",color:"green",description:"A system for tracking important water conditions in a fish pond.",understanding:"Sensors can monitor selected parameters such as temperature, water level and, with suitable equipment, dissolved oxygen or pH.",customization:"Low-level alerts, pump control, aeration status or phone-based monitoring.",popular:95},
+{id:"p31",title:"Greenhouse Temperature and Humidity Monitor",faculty:"Agriculture",programs:["Agronomy","Crop Science","Agricultural Engineering","Plant Science","Environmental Management"],category:"agriculture",emoji:"🌿",color:"green",description:"A device for observing the temperature and humidity inside a greenhouse.",understanding:"Sensors collect environmental readings so users can identify changes and decide when ventilation or watering may be needed.",customization:"Fan control, irrigation integration, historical charts or notifications.",popular:94},
+{id:"p32",title:"Soil Moisture Monitoring System",faculty:"Agriculture",programs:["Agronomy","Crop Science","Soil Science","Agricultural Engineering","Plant Science"],category:"agriculture",emoji:"🌱",color:"green",description:"A prototype that indicates how wet or dry soil is.",understanding:"A soil moisture sensor reports a reading that can help users decide when plants may need watering. Sensor readings should be calibrated for the soil type.",customization:"Automatic watering, multiple plant zones, display or phone notifications.",popular:93},
+{id:"p33",title:"Plant Growth Condition Monitoring",faculty:"Agriculture",programs:["Agronomy","Crop Science","Plant Science","Biotechnology","Agricultural Engineering"],category:"agriculture",emoji:"🌾",color:"green",description:"A project for tracking selected environmental conditions that influence plant growth.",understanding:"The prototype can record light, temperature, humidity or soil moisture and compare readings over time.",customization:"Growth logs, light monitoring, irrigation support or a dashboard.",popular:92},
+{id:"p34",title:"Cold Storage Temperature Monitoring",faculty:"Natural and Applied Sciences",programs:["Food Science and Technology","Microbiology","Biochemistry","Pharmacy","Medical Laboratory Science","Biomedical Engineering"],category:"science",emoji:"❄️",color:"teal",description:"A monitoring system for refrigerators or cold-storage spaces used for samples or products.",understanding:"A sensor tracks storage temperature and gives an alert when it goes outside a configured range.",customization:"Door-open detection, backup power status, remote alerts or temperature history.",popular:91},
+{id:"p35",title:"Food Spoilage Condition Monitoring",faculty:"Natural and Applied Sciences",programs:["Food Science and Technology","Microbiology","Biochemistry","Biotechnology","Chemistry"],category:"science",emoji:"🥫",color:"green",description:"A prototype that studies selected conditions associated with food storage and spoilage.",understanding:"The project may monitor temperature, humidity or a selected gas sensor response. These signals are indicators for study, not definitive proof that food is safe or spoiled.",customization:"Storage comparison, alert thresholds, data charts or sensor evaluation.",popular:90},
+{id:"p36",title:"Fermentation Temperature Monitoring",faculty:"Natural and Applied Sciences",programs:["Microbiology","Biochemistry","Biotechnology","Food Science and Technology","Chemical Engineering"],category:"science",emoji:"🧪",color:"green",description:"A device for recording temperature during a controlled fermentation study.",understanding:"A sensor records temperature over time so students can compare conditions across experiments.",customization:"pH monitoring, time-based graphs, alarm limits or multiple vessels.",popular:89},
+{id:"p37",title:"Laboratory Incubator CO₂ and Temperature Monitor",faculty:"Health Sciences",programs:["Biomedical Engineering","Medical Laboratory Science","Nursing Science","Public Health"],category:"health",emoji:"🧬",color:"teal",description:"A prototype for displaying temperature and CO₂ readings in a demonstration chamber.",understanding:"Suitable sensors monitor chosen chamber conditions. Any real laboratory use requires appropriate calibration and validation.",customization:"Condition alerts, remote dashboard, historical charts or door-open detection.",popular:88},
+{id:"p38",title:"Basic Patient Vital Signs Display",faculty:"Health Sciences",programs:["Biomedical Engineering","Nursing Science","Medical Laboratory Science","Public Health"],category:"health",emoji:"❤️",color:"purple",description:"An educational prototype that displays selected sensor readings for demonstration.",understanding:"The project illustrates sensor acquisition and display. It is not a certified medical device and must not be used to make clinical decisions.",customization:"Trend display, alarms for demonstration, data export or user interface improvements.",popular:87},
+{id:"p39",title:"Biomedical Equipment Usage Monitor",faculty:"Health Sciences",programs:["Biomedical Engineering","Medical Laboratory Science","Health Information Management"],category:"health",emoji:"🩺",color:"purple",description:"A record-keeping prototype for tracking equipment status, availability and maintenance dates.",understanding:"Staff can view equipment records, log checks and identify items that need maintenance.",customization:"QR labels, maintenance reminders, status dashboard or service history.",popular:86},
+
+/* Agriculture / Environment */
+{id:"p40",title:"Smart Irrigation and Water Usage System",faculty:"Agriculture",programs:["Agricultural Engineering","Agronomy","Crop Science","Soil Science","Environmental Management"],category:"agriculture",emoji:"🚿",color:"green",description:"A prototype that combines soil moisture information with watering control.",understanding:"The controller uses sensor readings or a schedule to operate a small pump or valve and can record watering events.",customization:"Rain detection, water usage estimates, multiple zones or phone control.",popular:99},
+{id:"p41",title:"Flood and Water Level Alert System",faculty:"Environmental Sciences",programs:["Environmental Management","Geography","Civil Engineering","Surveying and Geoinformatics","Agricultural Engineering"],category:"environment",emoji:"🌊",color:"teal",description:"A prototype that monitors rising water levels and gives a warning.",understanding:"A level sensor detects changes and triggers an indicator or sends a notification. A student prototype is not a replacement for an official flood-warning system.",customization:"Remote alert, rainfall sensor, location tagging or historical levels.",popular:96},
+{id:"p42",title:"Environmental Temperature and Humidity Station",faculty:"Environmental Sciences",programs:["Environmental Management","Geography","Physics","Architecture","Urban and Regional Planning"],category:"environment",emoji:"🌤️",color:"teal",description:"A small station for recording local temperature and relative humidity.",understanding:"Sensors collect measurements at intervals so users can compare conditions at different times or locations.",customization:"Cloud dashboard, location comparisons, air quality sensor or alerts.",popular:94},
+{id:"p43",title:"Waste Collection and Reporting System",faculty:"Environmental Sciences",programs:["Environmental Management","Geography","Computer Science","Urban and Regional Planning"],category:"environment",emoji:"♻️",color:"green",description:"A digital system for recording waste collection requests and tracking their status.",understanding:"Residents or staff submit reports and authorized users update collection progress and generate summaries.",customization:"Map view, photo uploads, collection schedules or analytics.",popular:91},
+{id:"p44",title:"Rainwater Harvesting Level Monitor",faculty:"Environmental Sciences",programs:["Environmental Management","Civil Engineering","Agricultural Engineering","Architecture"],category:"environment",emoji:"🌧️",color:"teal",description:"A system for tracking the level of water stored in a rainwater collection tank.",understanding:"A level sensor indicates available storage and can warn when the tank is nearly full or empty.",customization:"Rainfall tracking, water usage logging or pump integration.",popular:89},
+
+/* Mechanical / Civil / Built Environment */
+{id:"p45",title:"Automatic Water Pump Controller",faculty:"Engineering",programs:["Electrical/Electronic Engineering","Mechanical Engineering","Mechatronics Engineering","Civil Engineering"],category:"engineering",emoji:"🔧",color:"orange",description:"A control system that starts or stops a pump based on tank level or a selected condition.",understanding:"Sensors signal the controller to operate a demonstration pump while protecting against selected conditions such as low water.",customization:"Dry-run protection, manual override, status display or usage logging.",popular:90},
+{id:"p46",title:"Mini Conveyor Belt Sorting Prototype",faculty:"Engineering",programs:["Mechanical Engineering","Mechatronics Engineering","Electrical/Electronic Engineering","Computer Engineering"],category:"engineering",emoji:"🏭",color:"orange",description:"A small conveyor prototype that detects and sorts sample objects.",understanding:"A sensor detects an object and a controller operates a motor or diverter according to a simple rule.",customization:"Object counting, colour sensing, speed adjustment or a display.",popular:86},
+{id:"p47",title:"Building Energy Use Monitoring",faculty:"Environmental Sciences",programs:["Architecture","Building Technology","Electrical/Electronic Engineering","Environmental Management"],category:"environment",emoji:"🏢",color:"blue",description:"A project for recording selected energy use and environmental conditions in a building.",understanding:"Measurements are collected and displayed to help compare energy usage or indoor conditions over time.",customization:"Room comparisons, lighting schedules, dashboard or energy-saving recommendations.",popular:85},
+
+/* Management, social sciences and other faculties */
+{id:"p48",title:"Small Business Sales and Expense Tracker",faculty:"Management Sciences",programs:["Accounting","Business Administration","Entrepreneurship","Banking and Finance"],category:"business",emoji:"📈",color:"purple",description:"A simple application for recording sales, expenses and basic business summaries.",understanding:"Users enter transactions and the system organizes totals, balances and reports.",customization:"Receipt printing, stock linkage, daily summaries or customer records.",popular:92},
+{id:"p49",title:"Student Feedback and Survey Platform",faculty:"Social Sciences",programs:["Mass Communication","Psychology","Sociology","Economics","Computer Science","Educational Management"],category:"social",emoji:"📝",color:"purple",description:"A digital tool for collecting survey responses and presenting summary results.",understanding:"Users create questions, participants submit responses and the system summarizes results while respecting privacy.",customization:"Anonymous responses, charts, question types or export options.",popular:85},
+{id:"p50",title:"Digital Learning Resource Portal",faculty:"Education",programs:["Educational Technology","Computer Education","Science Education","Mathematics Education","Computer Science"],category:"education",emoji:"📖",color:"blue",description:"A website for organizing course materials, learning links and student resources.",understanding:"Students browse learning materials by course or topic while authorized staff manage the content.",customization:"Quizzes, progress tracking, announcements or accessibility improvements.",popular:90},
+{id:"p51",title:"Legal Case and Document Tracking System",faculty:"Law",programs:["Law","Public and Private Law","International Law","Computer Science"],category:"law",emoji:"⚖️",color:"purple",description:"A record-keeping prototype for organizing case details, documents and deadlines.",understanding:"Authorized users can search records, track important dates and manage document status. Sensitive records require careful access controls.",customization:"Deadline reminders, document categories, search filters or audit history.",popular:82},
+{id:"p52",title:"Farm Records and Expense Management System",faculty:"Agriculture",programs:["Agricultural Economics","Agronomy","Animal Science","Agricultural Engineering","Business Administration"],category:"agriculture",emoji:"🚜",color:"green",description:"A digital record book for farm activities, costs, sales and production.",understanding:"Users log activities and expenses to compare costs, output and income across a selected period.",customization:"Livestock records, crop schedules, inventory or profit summaries.",popular:88},
+{id:"p53",title:"Pharmacy Inventory and Expiry Tracker",faculty:"Pharmaceutical Sciences",programs:["Pharmacy","Pharmaceutical Chemistry","Pharmaceutics","Computer Science","Information Technology"],category:"health",emoji:"💊",color:"purple",description:"A record system for stock levels, batch details and expiry dates.",understanding:"Authorized users register items and receive reminders about low stock or approaching expiry dates.",customization:"Barcode scanning, supplier records, stock movement or report export.",popular:86},
+{id:"p54",title:"Animal Health and Farm Record System",faculty:"Veterinary Medicine",programs:["Veterinary Medicine","Veterinary Microbiology","Animal Science","Aquaculture and Fisheries"],category:"agriculture",emoji:"🐄",color:"green",description:"A record system for animal identification, routine care and farm observations.",understanding:"Authorized users keep organized records and review dates or observations. It does not diagnose disease.",customization:"Vaccination reminders, feed records, animal groups or reporting.",popular:83},
+{id:"p55",title:"Food Storage Condition Monitor",faculty:"Food and Life Sciences",programs:["Food Science and Technology","Nutrition and Dietetics","Food Microbiology","Microbiology"],category:"science",emoji:"🥗",color:"green",description:"A device for tracking storage temperature and humidity for food-related studies.",understanding:"Sensors collect environmental readings that can be compared with appropriate storage guidance for the product being studied.",customization:"Temperature alerts, history charts, multiple storage areas or data export.",popular:84},
+{id:"p56",title:"Community Health Information Dashboard",faculty:"Health Sciences",programs:["Public Health","Nursing Science","Health Information Management","Computer Science"],category:"health",emoji:"🩹",color:"teal",description:"A dashboard prototype for displaying non-identifying summary data for a health programme.",understanding:"Authorized users enter aggregated information and view trends. Personal health information should be protected and collected only when appropriate.",customization:"Charts, date filters, report export or programme summaries.",popular:81},
+{id:"p57",title:"Mass Communication News Publishing Website",faculty:"Social Sciences",programs:["Mass Communication","English and Literary Studies","Computer Science","Information Technology"],category:"social",emoji:"📰",color:"purple",description:"A website for publishing articles, organizing categories and managing editorial content.",understanding:"Editors create and review stories while visitors browse articles and search topics.",customization:"Author profiles, comments, approval workflow or multimedia posts.",popular:80},
+{id:"p58",title:"Personal Budget and Savings Tracker",faculty:"Management Sciences",programs:["Accounting","Banking and Finance","Economics","Business Administration","Computer Science"],category:"business",emoji:"💰",color:"purple",description:"A personal finance tool for recording income, expenses and savings goals.",understanding:"Users categorize transactions and compare spending with their budget.",customization:"Monthly reports, savings targets, spending alerts or visual charts.",popular:84},
+{id:"p59",title:"School Learning Performance Analysis",faculty:"Education",programs:["Educational Management","Science Education","Mathematics Education","Computer Education","Statistics"],category:"education",emoji:"📊",color:"blue",description:"A project for organizing assessment records and summarizing class performance.",understanding:"A user works with appropriately authorized learning data to calculate summaries and visualize performance patterns.",customization:"Subject comparisons, term reports, charts or anonymized group analysis.",popular:83},
+{id:"p60",title:"Weather Data Recording and Display Station",faculty:"Natural and Applied Sciences",programs:["Physics","Mathematics","Statistics","Environmental Management","Computer Engineering","Geography"],category:"science",emoji:"🌦️",color:"teal",description:"A station for collecting selected local weather or environmental measurements.",understanding:"Sensors measure chosen variables such as temperature, humidity or rainfall, and the project displays readings over time.",customization:"Data export, graphs, location comparisons or online dashboard.",popular:82}
+];
+
+const WHATSAPP_NUMBER = "2349131705072";
+const EMAIL_ADDRESS = "bolajiibrophy@gmail.com";
+const PAGE_SIZE = 12;
+
+let selectedFaculty = "";
+let selectedProgram = "";
+let selectedQuick = "all";
+let savedProjects = loadSaved();
+let visibleLimit = PAGE_SIZE;
+let activeProject = null;
+
+const $ = id => document.getElementById(id);
+
+function loadSaved() {
+  try {
+    const value = JSON.parse(localStorage.getItem("ibrophySavedProjects") || "[]");
+    return Array.isArray(value) ? value : [];
+  } catch {
+    return [];
+  }
+}
+function saveSaved() {
+  try { localStorage.setItem("ibrophySavedProjects", JSON.stringify(savedProjects)); }
+  catch { showToast("Your browser could not save this list."); }
+  updateSavedCount();
+}
+function updateSavedCount() {
+  $("savedCount").textContent = savedProjects.length;
+}
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[char]);
+}
+function getFaculty(name) {
+  return FACULTIES.find(f => f.name === name);
+}
+function getProgramsForFaculty(name) {
+  const faculty = getFaculty(name);
+  return faculty ? faculty.programs : [...new Set(FACULTIES.flatMap(f => f.programs))].sort();
+}
+function projectPrograms(project) {
+  return project.programs.join(", ");
+}
+
+function populateFacultySelects() {
+  const sorted = [...FACULTIES].sort((a,b) => a.name.localeCompare(b.name));
+  const options = sorted.map(f => `<option value="${escapeHTML(f.name)}">${escapeHTML(f.name)}</option>`).join("");
+  $("facultySelect").insertAdjacentHTML("beforeend", options);
+  $("customerFaculty").insertAdjacentHTML("beforeend", options);
+  updateProgramSelect();
+  updateCustomerProgram();
+}
+
+function updateProgramSelect() {
+  const faculty = $("facultySelect").value;
+  const programs = faculty ? getProgramsForFaculty(faculty) : [...new Set(FACULTIES.flatMap(f => f.programs))].sort();
+  const previous = $("programSelect").value;
+  $("programSelect").innerHTML = `<option value="">All programmes</option>` +
+    programs.map(p => `<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join("");
+  if (programs.includes(previous)) $("programSelect").value = previous;
+  selectedFaculty = faculty;
+  selectedProgram = $("programSelect").value;
+}
+
+function updateCustomerProgram() {
+  const faculty = $("customerFaculty").value;
+  const programs = faculty ? getProgramsForFaculty(faculty) : [...new Set(FACULTIES.flatMap(f => f.programs))].sort();
+  const previous = $("customerProgram").value;
+  $("customerProgram").innerHTML = `<option value="">Choose programme</option>` +
+    programs.map(p => `<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join("");
+  if (programs.includes(previous)) $("customerProgram").value = previous;
+}
+
+function renderFacultyCards() {
+  const visibleFirst = [
+    "Engineering",
+    "Computing and Information Technology",
+    "Natural and Applied Sciences",
+    "Environmental Sciences",
+    "Agriculture",
+    "Health Sciences",
+    "Basic Medical Sciences",
+    "Pharmaceutical Sciences",
+    "Food and Life Sciences",
+    "Education",
+    "Management Sciences",
+    "Social Sciences",
+    "Arts and Humanities",
+    "Law",
+    "Veterinary Medicine"
+  ];
+  const ordered = visibleFirst.map(name => getFaculty(name)).filter(Boolean);
+  $("facultyGrid").innerHTML = ordered.map(f => {
+    const active = selectedFaculty === f.name;
+    return `<button class="faculty-card ${active ? "active" : ""}" data-faculty="${escapeHTML(f.name)}">
+      <span class="faculty-icon">${f.icon}</span>
+      <strong>${escapeHTML(f.name)}</strong>
+      <small>${f.programs.length} programmes listed</small>
+    </button>`;
+  }).join("");
+  $("facultyGrid").querySelectorAll("[data-faculty]").forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.faculty;
+      $("facultySelect").value = selectedFaculty === name ? "" : name;
+      updateProgramSelect();
+      selectedQuick = "all";
+      updateQuickButtons();
+      visibleLimit = PAGE_SIZE;
+      renderFacultyCards();
+      renderProjects();
+      $("find").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+}
+
+function getFilteredProjects() {
+  const query = $("searchInput").value.trim().toLowerCase();
+  const faculty = $("facultySelect").value;
+  const program = $("programSelect").value;
+  const sort = $("sortSelect").value;
+
+  let list = PROJECTS.filter(p => {
+    const facultyMatch = !faculty || p.faculty === faculty ||
+      p.programs.some(prog => getFaculty(faculty)?.programs.includes(prog));
+    const programMatch = !program || p.programs.includes(program);
+    const haystack = [p.title,p.faculty,p.description,p.understanding,p.customization,...p.programs].join(" ").toLowerCase();
+    const queryMatch = !query || haystack.includes(query);
+    const savedMatch = selectedQuick !== "saved" || savedProjects.includes(p.id);
+    const quickMatch = selectedQuick === "all" || selectedQuick === "saved" ||
+      (selectedQuick === "engineering" && ["engineering"].includes(p.category)) ||
+      (selectedQuick === "computing" && p.category === "computing") ||
+      (selectedQuick === "science" && ["science","health"].includes(p.category));
+    return facultyMatch && programMatch && queryMatch && savedMatch && quickMatch;
+  });
+
+  if (sort === "az") list.sort((a,b) => a.title.localeCompare(b.title));
+  else list.sort((a,b) => b.popular - a.popular || a.title.localeCompare(b.title));
+  return list;
+}
+
+function renderProjects() {
+  const all = getFilteredProjects();
+  const shown = all.slice(0, visibleLimit);
+  $("resultCount").textContent = `${all.length} project${all.length === 1 ? "" : "s"} found`;
+  $("projectHeading").textContent = selectedQuick === "saved" ? "Your saved projects" :
+    $("programSelect").value ? `Projects for ${$("programSelect").value}` :
+    $("facultySelect").value ? `Projects in ${$("facultySelect").value}` :
+    $("searchInput").value.trim() ? "Search results" : "Popular student project ideas";
+
+  $("projectGrid").innerHTML = shown.map(p => {
+    const saved = savedProjects.includes(p.id);
+    const faculty = getFaculty(p.faculty);
+    return `<article class="project-card">
+      <div class="project-cover ${escapeHTML(p.color)}">
+        <span class="project-emoji">${p.emoji}</span>
+        <button class="save-btn ${saved ? "saved" : ""}" data-save="${p.id}" aria-label="${saved ? "Remove saved project" : "Save project"}" title="${saved ? "Remove from saved" : "Save project"}">${saved ? "♥" : "♡"}</button>
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="tag">${escapeHTML(p.faculty)}</span><span class="tag teal">${escapeHTML(p.category === "computing" ? "Computing" : p.category === "engineering" ? "Engineering" : p.category === "science" ? "Science & Lab" : p.category === "agriculture" ? "Agriculture" : p.category === "health" ? "Health" : "Related studies")}</span></div>
+        <h3>${escapeHTML(p.title)}</h3>
+        <p>${escapeHTML(p.description)}</p>
+        <div class="project-meta"><strong>Suitable programmes:</strong> ${escapeHTML(p.programs.slice(0,3).join(", "))}${p.programs.length > 3 ? " and related programmes" : ""}</div>
+        <div class="project-actions">
+          <button class="btn btn-outline" data-details="${p.id}">Explore Project</button>
+          <button class="btn btn-primary" data-request="${p.id}">Request a Build</button>
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+
+  $("emptyState").classList.toggle("hidden", all.length > 0);
+  $("projectGrid").classList.toggle("hidden", all.length === 0);
+  $("moreWrap").classList.toggle("hidden", all.length <= PAGE_SIZE || visibleLimit >= all.length);
+
+  $("projectGrid").querySelectorAll("[data-save]").forEach(btn => btn.addEventListener("click", () => toggleSaved(btn.dataset.save)));
+  $("projectGrid").querySelectorAll("[data-details]").forEach(btn => btn.addEventListener("click", () => openDetails(btn.dataset.details)));
+  $("projectGrid").querySelectorAll("[data-request]").forEach(btn => btn.addEventListener("click", () => requestBuild(btn.dataset.request)));
+}
+
+function updateQuickButtons() {
+  $("quickFilters").querySelectorAll("[data-quick]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.quick === selectedQuick);
+  });
+}
+
+function toggleSaved(id) {
+  if (savedProjects.includes(id)) {
+    savedProjects = savedProjects.filter(item => item !== id);
+    showToast("Project removed from saved list.");
+  } else {
+    savedProjects.push(id);
+    showToast("Project saved on this browser.");
+  }
+  saveSaved();
+  renderProjects();
+  renderFacultyCards();
+}
+
+function showSaved() {
+  selectedQuick = "saved";
+  selectedFaculty = "";
+  selectedProgram = "";
+  $("facultySelect").value = "";
+  $("programSelect").value = "";
+  updateQuickButtons();
+  visibleLimit = PAGE_SIZE;
+  renderProjects();
+  $("find").scrollIntoView({behavior:"smooth"});
+}
+
+function openDetails(id) {
+  const p = PROJECTS.find(project => project.id === id);
+  if (!p) return;
+  activeProject = p;
+  $("modalTags").innerHTML = `<span class="tag">${escapeHTML(p.faculty)}</span><span class="tag teal">${escapeHTML(p.programs.slice(0,2).join(" · "))}</span>`;
+  $("modalTitle").textContent = p.title;
+  $("modalMeta").textContent = "Suitable programmes: " + projectPrograms(p);
+  $("modalDescription").textContent = p.description;
+  $("modalUnderstanding").textContent = p.understanding;
+  $("modalCustomization").textContent = p.customization;
+  $("modalRequest").onclick = () => requestBuild(p.id);
+  $("modalCustomize").onclick = () => {
+    closeModal();
+    fillRequest(p);
+    $("customerDetails").value = `I want to customize the project "${p.title}". Please discuss these possible features: ${p.customization}`;
+    $("request").scrollIntoView({behavior:"smooth"});
+    $("customerDetails").focus({preventScroll:true});
+  };
+  $("projectModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  $("projectModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function fillRequest(p) {
+  if (!p) return;
+  $("customerFaculty").value = p.faculty;
+  updateCustomerProgram();
+  const matching = p.programs.find(program => getProgramsForFaculty(p.faculty).includes(program));
+  if (matching) $("customerProgram").value = matching;
+  $("customerProject").value = p.title;
+}
+
+function requestBuild(id) {
+  const p = PROJECTS.find(project => project.id === id);
+  if (!p) return;
+  const message = `Hello IBROPHY Technologies,\n\nI am interested in requesting a build for this project:\nProject: ${p.title}\nFaculty: ${p.faculty}\nSuitable programme(s): ${projectPrograms(p)}\n\nPlease tell me about the available options and how I can customize it.\n\nThank you.`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+}
+
+function requestCustom() {
+  $("customerProject").value = $("searchInput").value.trim();
+  $("customerFaculty").value = $("facultySelect").value;
+  updateCustomerProgram();
+  $("customerProgram").value = $("programSelect").value;
+  $("customerDetails").value = $("searchInput").value.trim()
+    ? `I searched for "${$("searchInput").value.trim()}" but could not find a suitable match. I would like to discuss a project in this area.`
+    : "";
+  $("request").scrollIntoView({behavior:"smooth"});
+  setTimeout(() => $("customerName").focus({preventScroll:true}), 400);
+}
+
+function showToast(message) {
+  const toast = $("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove("show"), 2600);
+}
+
+/* Enquiry: create a prefilled WhatsApp message or email draft. */
+$("requestForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const data = {
+    name: $("customerName").value.trim(),
+    email: $("customerEmail").value.trim(),
+    faculty: $("customerFaculty").value,
+    program: $("customerProgram").value,
+    project: $("customerProject").value.trim() || "Custom project request",
+    details: $("customerDetails").value.trim(),
+    contact: $("contactPreference").value
+  };
+  const message = `Hello IBROPHY Technologies,\n\nI would like to make a project enquiry.\n\nName: ${data.name}\nEmail: ${data.email}\nFaculty: ${data.faculty}\nDepartment/Programme: ${data.program}\nProject: ${data.project}\nPreferred contact: ${data.contact}\n\nProject details:\n${data.details}\n\nThank you.`;
+
+  if (data.contact === "Email") {
+    const subject = `Project enquiry: ${data.project}`;
+    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  } else {
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+  }
+});
+
+$("facultySelect").addEventListener("change", () => {
+  updateProgramSelect();
+  selectedQuick = "all";
+  visibleLimit = PAGE_SIZE;
+  updateQuickButtons();
+  renderFacultyCards();
+  renderProjects();
+});
+$("programSelect").addEventListener("change", () => {
+  selectedProgram = $("programSelect").value;
+  selectedQuick = "all";
+  visibleLimit = PAGE_SIZE;
+  updateQuickButtons();
+  renderProjects();
+});
+$("customerFaculty").addEventListener("change", updateCustomerProgram);
+$("searchInput").addEventListener("input", () => {
+  visibleLimit = PAGE_SIZE;
+  renderProjects();
+});
+$("sortSelect").addEventListener("change", renderProjects);
+$("clearFilters").addEventListener("click", () => {
+  $("searchInput").value = "";
+  $("facultySelect").value = "";
+  $("programSelect").value = "";
+  $("sortSelect").value = "popular";
+  selectedQuick = "all";
+  visibleLimit = PAGE_SIZE;
+  updateProgramSelect();
+  updateQuickButtons();
+  renderFacultyCards();
+  renderProjects();
+});
+$("quickFilters").addEventListener("click", event => {
+  const btn = event.target.closest("[data-quick]");
+  if (!btn) return;
+  selectedQuick = btn.dataset.quick;
+  visibleLimit = PAGE_SIZE;
+  updateQuickButtons();
+  renderProjects();
+});
+$("moreBtn").addEventListener("click", () => {
+  visibleLimit += PAGE_SIZE;
+  renderProjects();
+});
+$("menuToggle").addEventListener("click", () => {
+  const isOpen = $("navLinks").classList.toggle("open");
+  $("menuToggle").setAttribute("aria-expanded", String(isOpen));
+  $("menuToggle").textContent = isOpen ? "✕" : "☰";
+});
+$("navLinks").querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+  $("navLinks").classList.remove("open");
+  $("menuToggle").setAttribute("aria-expanded", "false");
+  $("menuToggle").textContent = "☰";
+}));
+$("projectModal").addEventListener("click", event => {
+  if (event.target === $("projectModal")) closeModal();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
+});
+
+/* Initial render */
+$("year").textContent = new Date().getFullYear();
+populateFacultySelects();
+renderFacultyCards();
+renderProjects();
+updateSavedCount();
+</script>
+</body>
+</html>
