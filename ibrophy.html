@@ -1,4 +1,3473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101B35">
 
+<title>IBROPHY Technologies | Student Project Ideas</title>
+
+<meta name="description" content="Discover practical student project ideas across engineering, computing, sciences, agriculture, health, environmental studies and more with IBROPHY Technologies.">
+
+<style>
+:root {
+    --navy: #101b35;
+    --navy-light: #182849;
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+    --gold: #f5b82e;
+    --white: #ffffff;
+    --background: #f4f7fc;
+    --surface: #ffffff;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #15803d;
+    --danger: #dc2626;
+    --shadow: 0 12px 35px rgba(16, 27, 53, 0.09);
+    --radius: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--blue-light);
+    outline-offset: 3px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 68px 0;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    max-width: 700px;
+    color: var(--muted);
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--blue);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-size: 0.76rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 11px 17px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-gold {
+    color: var(--navy);
+    background: var(--gold);
+}
+
+.btn-outline {
+    color: var(--navy);
+    background: transparent;
+    border-color: var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.btn-light {
+    color: var(--navy);
+    background: var(--white);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+/* Navigation */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(16, 27, 53, 0.97);
+    color: var(--white);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-mark {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 1.02rem;
+    letter-spacing: 0.6px;
+}
+
+.brand-text span {
+    display: block;
+    font-size: 0.72rem;
+    color: #cbd5e1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 9px;
+    color: var(--white);
+    background: transparent;
+    font-size: 1.35rem;
+}
+
+/* Hero */
+
+.hero {
+    color: var(--white);
+    background:
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,0.34), transparent 30%),
+        linear-gradient(130deg, #101b35 0%, #172c52 58%, #123b70 100%);
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 55px;
+    align-items: center;
+    padding-top: 76px;
+    padding-bottom: 76px;
+    min-height: 490px;
+}
+
+.hero .eyebrow {
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 5vw, 4.25rem);
+    line-height: 1.08;
+    letter-spacing: -1.7px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: #d5dfef;
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 1.35rem;
+    color: var(--gold);
+}
+
+.hero-stat span {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+.hero-visual {
+    min-width: 0;
+}
+
+.carousel-card {
+    position: relative;
+    min-height: 320px;
+    padding: 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.04));
+    box-shadow: 0 30px 65px rgba(0,0,0,0.18);
+    overflow: hidden;
+}
+
+.carousel-card::before {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -70px;
+    top: -70px;
+    border-radius: 50%;
+    background: rgba(245,184,46,0.15);
+}
+
+.carousel-icon {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+}
+
+.carousel-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.carousel-card p {
+    color: #d7e3f4;
+    position: relative;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    background: #7890b2;
+}
+
+.carousel-dot.active {
+    width: 26px;
+    background: var(--gold);
+}
+
+.carousel-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-arrows button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+/* Benefits strip */
+
+.benefits {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefit-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: var(--blue);
+    font-size: 1.3rem;
+}
+
+.benefit strong {
+    display: block;
+    color: var(--navy);
+    font-size: 0.91rem;
+}
+
+.benefit span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* Search and filters */
+
+.project-section {
+    padding-top: 68px;
+}
+
+.project-toolbar {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 5px 22px rgba(16,27,53,0.035);
+    margin-bottom: 28px;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-wrap {
+    position: relative;
+}
+
+.search-wrap span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.form-control {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #d7dfeb;
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--white);
+}
+
+.search-wrap input {
+    padding-left: 44px;
+}
+
+.form-control:focus {
+    outline: 2px solid rgba(37,99,235,0.16);
+    border-color: var(--blue);
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.results-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.results-line p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.results-line strong {
+    color: var(--navy);
+}
+
+.view-tabs {
+    display: flex;
+    gap: 5px;
+    padding: 4px;
+    border-radius: 10px;
+    background: #e8eef8;
+}
+
+.view-tab {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.view-tab.active {
+    background: var(--white);
+    color: var(--blue);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Project cards */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--white);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.card-top {
+    padding: 22px 22px 14px;
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #eff6ff;
+    font-size: 1.65rem;
+    margin-bottom: 16px;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 11px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 30px;
+    background: #edf2fb;
+    color: #334a6e;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.pill-blue {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.project-card h3 {
+    color: var(--navy);
+    font-size: 1.08rem;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+
+.project-card .description {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.card-bottom {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding: 15px 22px 20px;
+    border-top: 1px solid #edf1f7;
+}
+
+.card-bottom .btn {
+    flex: 1;
+    padding: 9px 10px;
+    font-size: 0.83rem;
+}
+
+.save-btn {
+    flex: 0 0 42px !important;
+    padding: 8px !important;
+    font-size: 1.15rem !important;
+}
+
+.save-btn.saved {
+    color: #b91c1c;
+    border-color: #fecaca;
+    background: #fff1f2;
+}
+
+.empty-inline {
+    grid-column: 1 / -1;
+    padding: 45px 20px;
+    text-align: center;
+    color: var(--muted);
+    background: var(--white);
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--radius);
+}
+
+.empty-inline .empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.empty-inline h3 {
+    color: var(--navy);
+    margin-bottom: 7px;
+}
+
+/* How it works */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.step-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.step-number {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    color: var(--navy);
+    background: var(--gold);
+    border-radius: 13px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.step-card h3 {
+    color: var(--navy);
+    margin-bottom: 9px;
+}
+
+.step-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* CTA */
+
+.cta-section {
+    padding: 0 0 68px;
+}
+
+.cta-panel {
+    padding: 42px;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #101b35, #194b88);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta-panel h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.cta-panel p {
+    color: #d7e3f4;
+    max-width: 650px;
+}
+
+.cta-panel .btn {
+    flex-shrink: 0;
+}
+
+/* Footer */
+
+.site-footer {
+    background: #0a1225;
+    color: #cbd5e1;
+    padding: 48px 0 22px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+.footer-brand {
+    margin-bottom: 16px;
+}
+
+.footer-about {
+    max-width: 420px;
+    font-size: 0.88rem;
+    color: #aebbd0;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-size: 0.98rem;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #aebbd0;
+    margin-bottom: 9px;
+    font-size: 0.87rem;
+}
+
+.footer-column a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Modal base */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(7, 14, 30, 0.68);
+    backdrop-filter: blur(4px);
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+    width: min(580px, 100%);
+    max-height: min(88vh, 850px);
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+    animation: modalIn 0.18s ease-out;
+}
+
+.modal-wide {
+    width: min(720px, 100%);
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 24px 25px 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+    color: var(--navy);
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.modal-close {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 9px;
+    background: #eef2f8;
+    color: var(--navy);
+    font-size: 1.3rem;
+}
+
+.modal-body {
+    padding: 24px 25px;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 18px 25px 24px;
+    border-top: 1px solid var(--border);
+}
+
+.modal-footer .btn {
+    flex: 1;
+}
+
+.detail-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.detail-section {
+    margin-top: 20px;
+}
+
+.detail-section h3 {
+    color: var(--navy);
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.detail-section p,
+.detail-section li {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.detail-section ul {
+    padding-left: 20px;
+}
+
+.detail-section li {
+    margin-bottom: 6px;
+}
+
+/* No results popup */
+
+.notice-modal {
+    width: min(430px, 100%);
+    text-align: center;
+    padding: 32px 27px 27px;
+}
+
+.notice-icon {
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #fff7df;
+    font-size: 2rem;
+}
+
+.notice-modal h2 {
+    color: var(--navy);
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.notice-modal p {
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.notice-modal .btn {
+    width: 100%;
+}
+
+/* Contact method choice */
+
+.contact-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-top: 20px;
+}
+
+.contact-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 12px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--navy);
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.contact-option:hover {
+    border-color: var(--blue);
+    background: #f5f9ff;
+    transform: translateY(-2px);
+}
+
+.contact-option .option-icon {
+    font-size: 2rem;
+}
+
+.contact-option strong {
+    font-size: 0.95rem;
+}
+
+.contact-option span:last-child {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* Toast */
+
+.toast {
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%, 20px);
+    width: max-content;
+    max-width: calc(100% - 30px);
+    padding: 13px 18px;
+    border-radius: 12px;
+    background: #12213e;
+    color: var(--white);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.22s ease;
+    font-size: 0.9rem;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.83rem;
+    }
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .nav-links {
+        position: absolute;
+        display: none;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 16px 4% 22px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--navy);
+        border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        font-size: 0.95rem;
+    }
+
+    .nav-actions .btn {
+        display: none;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        padding-bottom: 48px;
+        gap: 36px;
+    }
+
+    .hero h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .carousel-card {
+        min-height: 270px;
+    }
+
+    .section {
+        padding: 52px 0;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid > :first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .brand-mark {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand-text strong {
+        font-size: 0.9rem;
+    }
+
+    .brand-text span {
+        font-size: 0.65rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-stats {
+        gap: 18px;
+    }
+
+    .hero-stat strong {
+        font-size: 1.15rem;
+    }
+
+    .carousel-card {
+        padding: 23px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 17px 12px;
+    }
+
+    .benefit {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .benefit-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .benefit strong {
+        font-size: 0.8rem;
+    }
+
+    .benefit span {
+        font-size: 0.72rem;
+    }
+
+    .search-row {
+        grid-template-columns: 1fr;
+    }
+
+    .project-toolbar {
+        padding: 16px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .results-line {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid > :first-child {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .contact-choice {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-header,
+    .modal-body {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .modal-footer {
+        padding-left: 19px;
+        padding-right: 19px;
+        flex-direction: column;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container navbar">
+
+        <a class="brand" href="#home" aria-label="IBROPHY Technologies home">
+            <span class="brand-mark">IB</span>
+            <span class="brand-text">
+                <strong>IBROPHY TECHNOLOGIES</strong>
+                <span>Ideas. Innovation. Solutions.</span>
+            </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#projects">Project Ideas</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn btn-gold" type="button" onclick="openContactChoice()">
+                Get Project Help
+            </button>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <div>
+            <span class="eyebrow">Your project journey starts here</span>
+
+            <h1>
+                Discover the Right
+                <span>Project Idea</span>
+                for Your Future
+            </h1>
+
+            <p class="hero-description">
+                Explore practical and innovative student project ideas across engineering,
+                computing, sciences, agriculture, business, health, education and other fields.
+                Find an idea that matches your programme and academic goals.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-gold">Explore Project Ideas →</a>
+                <button class="btn btn-light" type="button" onclick="openContactChoice()">
+                    Contact IBROPHY
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>60+</strong>
+                    <span>Project ideas</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>15+</strong>
+                    <span>Study programmes</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>100%</strong>
+                    <span>Easy browsing</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="carousel-card" aria-live="polite">
+                <div class="carousel-icon" id="carouselIcon">💻</div>
+                <span class="eyebrow" id="carouselCategory">Computing and Technology</span>
+                <h2 id="carouselTitle">Build Something That Matters</h2>
+                <p id="carouselDescription">
+                    Explore software, web development, artificial intelligence and other technology projects.
+                </p>
+            </div>
+
+            <div class="carousel-controls">
+                <div class="carousel-dots" id="carouselDots" aria-label="Choose featured project"></div>
+                <div class="carousel-arrows">
+                    <button type="button" id="carouselPrev" aria-label="Previous slide">←</button>
+                    <button type="button" id="carouselNext" aria-label="Next slide">→</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container benefit-grid">
+
+        <div class="benefit">
+            <div class="benefit-icon">🔎</div>
+            <div>
+                <strong>Find Ideas Easily</strong>
+                <span>Search and filter projects</span>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">🎓</div>
+            <div>
+                <strong>Across Programmes</strong>
+                <span>Explore different disciplines</span>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">❤️</div>
+            <div>
+                <strong>Save Your Favourites</strong>
+                <span>Keep track of selected ideas</span>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">💬</div>
+            <div>
+                <strong>Make an Enquiry</strong>
+                <span>Choose WhatsApp or email</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section project-section" id="projects">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">Project idea library</span>
+            <h2>Explore Student Project Ideas</h2>
+            <p>
+                Search by keyword, select your faculty or choose your programme.
+                Open any project to read more or save it for later.
+            </p>
+        </div>
+
+        <div class="project-toolbar">
+
+            <div class="search-row">
+                <div class="search-wrap">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        class="form-control"
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search projects, topics, or keywords..."
+                        autocomplete="off"
+                        aria-label="Search project ideas">
+                </div>
+
+                <button class="btn btn-primary" type="button" id="searchButton">
+                    Search Projects
+                </button>
+            </div>
+
+            <div class="filters">
+
+                <div class="filter-group">
+                    <label for="facultyFilter">Filter by faculty</label>
+                    <select class="form-control" id="facultyFilter">
+                        <option value="all">All faculties</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="programmeFilter">Filter by programme</label>
+                    <select class="form-control" id="programmeFilter">
+                        <option value="all">All programmes</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn btn-outline" id="resetFilters" type="button">
+                        Reset
+                    </button>
+                    <button class="btn btn-outline" id="savedFilterButton" type="button">
+                        ♥ Saved (<span id="savedCount">0</span>)
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="results-line">
+            <p id="resultsText" aria-live="polite">Loading projects...</p>
+
+            <div class="view-tabs" role="group" aria-label="Project display options">
+                <button type="button" class="view-tab active" id="allProjectsTab">All Projects</button>
+                <button type="button" class="view-tab" id="savedProjectsTab">Saved Projects</button>
+            </div>
+        </div>
+
+        <div class="project-grid" id="projectGrid"></div>
+
+    </div>
+</section>
+
+<section class="section" id="how-it-works">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">Simple and convenient</span>
+            <h2>How It Works</h2>
+            <p>Move from browsing ideas to identifying a suitable topic for your academic work.</p>
+        </div>
+
+        <div class="steps-grid">
+
+            <article class="step-card">
+                <div class="step-number">01</div>
+                <h3>Explore Ideas</h3>
+                <p>Browse the project library or search for a topic related to your course and interests.</p>
+            </article>
+
+            <article class="step-card">
+                <div class="step-number">02</div>
+                <h3>Review and Save</h3>
+                <p>Read project descriptions, check the relevant programme and save ideas you want to revisit.</p>
+            </article>
+
+            <article class="step-card">
+                <div class="step-number">03</div>
+                <h3>Make an Enquiry</h3>
+                <p>Contact IBROPHY Technologies through WhatsApp or email to discuss your preferred project idea.</p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" id="about">
+    <div class="container">
+        <div class="cta-panel">
+            <div>
+                <span class="eyebrow">IBROPHY Technologies</span>
+                <h2>Have a Project Idea in Mind?</h2>
+                <p>
+                    Discuss your preferred topic, explore possible approaches and take the next step
+                    towards your academic project.
+                </p>
+            </div>
+
+            <button class="btn btn-gold" type="button" onclick="openContactChoice()">
+                Make an Enquiry →
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <a class="brand footer-brand" href="#home">
+                    <span class="brand-mark">IB</span>
+                    <span class="brand-text">
+                        <strong>IBROPHY TECHNOLOGIES</strong>
+                        <span>Ideas. Innovation. Solutions.</span>
+                    </span>
+                </a>
+
+                <p class="footer-about">
+                    A project idea discovery platform helping students explore possible
+                    academic topics across a range of disciplines.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#projects">Project Ideas</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <a href="#" onclick="event.preventDefault(); openContactChoice();">WhatsApp or Email</a>
+                <a href="#projects">Browse Projects</a>
+                <a href="#" onclick="event.preventDefault(); showSavedProjects();">Saved Projects</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="currentYear"></span> IBROPHY Technologies. All rights reserved.</span>
+            <span>Built for project discovery and academic inspiration.</span>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Project details modal -->
+<div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="modal modal-wide">
+
+        <div class="modal-header">
+            <h2 id="projectModalTitle">Project Details</h2>
+            <button class="modal-close" type="button" data-close="projectModal" aria-label="Close project details">×</button>
+        </div>
+
+        <div class="modal-body" id="projectModalBody"></div>
+
+        <div class="modal-footer">
+            <button class="btn btn-outline" type="button" id="modalSaveButton">♡ Save Project</button>
+            <button class="btn btn-primary" type="button" id="modalEnquiryButton">Enquire About Project</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Centered no-results popup -->
+<div class="modal-backdrop" id="noResultsModal" role="dialog" aria-modal="true" aria-labelledby="noResultsTitle">
+    <div class="modal notice-modal">
+
+        <div class="notice-icon">🔎</div>
+
+        <h2 id="noResultsTitle">No Projects Found</h2>
+
+        <p id="noResultsMessage">
+            We could not find a project matching your search. Try another keyword or reset your filters.
+        </p>
+
+        <button class="btn btn-primary" type="button" id="closeNoResults">
+            Adjust My Search
+        </button>
+
+    </div>
+</div>
+
+<!-- Contact method selection modal -->
+<div class="modal-backdrop" id="contactChoiceModal" role="dialog" aria-modal="true" aria-labelledby="contactChoiceTitle">
+    <div class="modal">
+
+        <div class="modal-header">
+            <div>
+                <span class="eyebrow">Get in touch</span>
+                <h2 id="contactChoiceTitle">How Would You Like to Contact Us?</h2>
+            </div>
+            <button class="modal-close" type="button" data-close="contactChoiceModal" aria-label="Close contact options">×</button>
+        </div>
+
+        <div class="modal-body">
+            <p style="color:var(--muted)">
+                Choose either WhatsApp or email. Your selected project idea, if any,
+                will be included in your enquiry.
+            </p>
+
+            <div class="contact-choice">
+
+                <button class="contact-option" id="whatsappOption" type="button">
+                    <span class="option-icon">💬</span>
+                    <strong>Continue with WhatsApp</strong>
+                    <span>Open a WhatsApp conversation</span>
+                </button>
+
+                <button class="contact-option" id="emailOption" type="button">
+                    <span class="option-icon">✉️</span>
+                    <strong>Continue with Email</strong>
+                    <span>Prepare an email enquiry</span>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ==========================================================
+   IBROPHY TECHNOLOGIES WEBSITE CONFIGURATION
+
+   Replace these sample contact details with your own.
+   WhatsApp number must include country code, numbers only.
+   Example Nigeria: 2348012345678
+   ========================================================== */
+
+const CONFIG = {
+    businessName: "IBROPHY Technologies",
+    whatsappNumber: "2348012345678",
+    emailAddress: "your-email@example.com"
+};
+
+/* ==========================================================
+   PROJECT LIBRARY
+   60 student project ideas across multiple disciplines.
+   ========================================================== */
+
+const projects = [
+    {
+        id: 1,
+        title: "Student Attendance Management System",
+        faculty: "Computing and Information Technology",
+        programme: "Computer Science",
+        icon: "💻",
+        level: "Intermediate",
+        description: "A digital platform for recording attendance, tracking student participation and generating reports.",
+        objectives: [
+            "Create a reliable attendance recording system.",
+            "Allow authorised users to view attendance records.",
+            "Generate attendance summaries and reports."
+        ],
+        tools: "HTML, CSS, JavaScript, PHP or Python, and MySQL",
+        keywords: "attendance school database student management"
+    },
+    {
+        id: 2,
+        title: "Online Student Project Repository",
+        faculty: "Computing and Information Technology",
+        programme: "Computer Science",
+        icon: "📚",
+        level: "Intermediate",
+        description: "A web application that organises academic project topics and allows students to search for relevant ideas.",
+        objectives: [
+            "Organise project topics by department and programme.",
+            "Provide keyword search and filtering.",
+            "Allow users to save interesting topics."
+        ],
+        tools: "HTML, CSS, JavaScript, PHP or Python, and a database",
+        keywords: "repository project topics academic library"
+    },
+    {
+        id: 3,
+        title: "Online Examination Management System",
+        faculty: "Computing and Information Technology",
+        programme: "Computer Science",
+        icon: "📝",
+        level: "Advanced",
+        description: "A platform for preparing online tests, managing questions and presenting examination results.",
+        objectives: [
+            "Support question and test management.",
+            "Provide timed online assessments.",
+            "Calculate and display results."
+        ],
+        tools: "JavaScript, PHP or Python, database, and web technologies",
+        keywords: "exam examination online test result"
+    },
+    {
+        id: 4,
+        title: "Hospital Appointment Booking System",
+        faculty: "Computing and Information Technology",
+        programme: "Software Engineering",
+        icon: "🏥",
+        level: "Intermediate",
+        description: "A booking platform that helps patients request appointments and allows clinics to organise schedules.",
+        objectives: [
+            "Record appointment requests.",
+            "Organise available appointment slots.",
+            "Provide appointment status information."
+        ],
+        tools: "HTML, CSS, JavaScript, backend framework, and database",
+        keywords: "hospital clinic booking appointment"
+    },
+    {
+        id: 5,
+        title: "Inventory Management System",
+        faculty: "Computing and Information Technology",
+        programme: "Information Technology",
+        icon: "📦",
+        level: "Intermediate",
+        description: "A system for tracking stock levels, recording transactions and identifying items that need restocking.",
+        objectives: [
+            "Record products and stock quantities.",
+            "Track stock additions and removals.",
+            "Produce inventory reports."
+        ],
+        tools: "Python or PHP, SQL database, and a user interface",
+        keywords: "inventory stock warehouse products"
+    },
+    {
+        id: 6,
+        title: "Cybersecurity Awareness Learning Platform",
+        faculty: "Computing and Information Technology",
+        programme: "Cybersecurity",
+        icon: "🔐",
+        level: "Intermediate",
+        description: "An educational platform that teaches users about passwords, phishing and safer online behaviour.",
+        objectives: [
+            "Present cybersecurity learning materials.",
+            "Provide quizzes to assess understanding.",
+            "Track learning progress."
+        ],
+        tools: "HTML, CSS, JavaScript, and optional backend storage",
+        keywords: "security phishing password cyber awareness"
+    },
+    {
+        id: 7,
+        title: "Library Management System",
+        faculty: "Computing and Information Technology",
+        programme: "Information Technology",
+        icon: "📖",
+        level: "Intermediate",
+        description: "A library application for managing books, borrowers, lending records and return dates.",
+        objectives: [
+            "Maintain a searchable book catalogue.",
+            "Record book loans and returns.",
+            "Track overdue items."
+        ],
+        tools: "Java, Python or PHP, and a relational database",
+        keywords: "library books borrowing lending"
+    },
+    {
+        id: 8,
+        title: "E-Commerce Store for Local Businesses",
+        faculty: "Computing and Information Technology",
+        programme: "Software Engineering",
+        icon: "🛍️",
+        level: "Advanced",
+        description: "An online store that displays products, supports shopping carts and records customer orders.",
+        objectives: [
+            "Display products and categories.",
+            "Provide a shopping cart and checkout workflow.",
+            "Manage customer orders."
+        ],
+        tools: "HTML, CSS, JavaScript, backend framework, and database",
+        keywords: "ecommerce online shopping store sales"
+    },
+    {
+        id: 9,
+        title: "Personal Budget and Expense Tracker",
+        faculty: "Computing and Information Technology",
+        programme: "Computer Science",
+        icon: "💰",
+        level: "Beginner",
+        description: "An application for recording expenses, organising spending categories and comparing expenses with a budget.",
+        objectives: [
+            "Record income and expenses.",
+            "Group transactions into categories.",
+            "Display spending summaries."
+        ],
+        tools: "JavaScript, Python or Java, with optional database storage",
+        keywords: "budget finance expense money tracker"
+    },
+    {
+        id: 10,
+        title: "Student Result Processing System",
+        faculty: "Computing and Information Technology",
+        programme: "Computer Science",
+        icon: "📊",
+        level: "Intermediate",
+        description: "A system for recording scores, calculating grades and preparing student result summaries.",
+        objectives: [
+            "Record student assessment scores.",
+            "Calculate grades using configured rules.",
+            "Generate result reports."
+        ],
+        tools: "PHP or Python, SQL database, and web technologies",
+        keywords: "result grades academic score processing"
+    },
+    {
+        id: 11,
+        title: "Smart Home Automation Prototype",
+        faculty: "Engineering and Technology",
+        programme: "Computer Engineering",
+        icon: "🏠",
+        level: "Advanced",
+        description: "A prototype that uses sensors and a microcontroller to monitor and control selected home devices.",
+        objectives: [
+            "Read input from suitable sensors.",
+            "Control selected devices through a controller.",
+            "Demonstrate monitoring and automation."
+        ],
+        tools: "Arduino or ESP32, sensors, relays, and suitable software",
+        keywords: "smart home automation embedded sensors"
+    },
+    {
+        id: 12,
+        title: "Microcontroller-Based Water Level Monitor",
+        faculty: "Engineering and Technology",
+        programme: "Electrical and Electronics Engineering",
+        icon: "💧",
+        level: "Intermediate",
+        description: "A device that measures water level and provides alerts when a tank reaches configured thresholds.",
+        objectives: [
+            "Measure water level using a sensor.",
+            "Display the current level.",
+            "Provide low-level and high-level alerts."
+        ],
+        tools: "Microcontroller, water-level sensor, display, and buzzer",
+        keywords: "water tank level monitor sensor"
+    },
+    {
+        id: 13,
+        title: "Solar-Powered Phone Charging Station",
+        faculty: "Engineering and Technology",
+        programme: "Electrical and Electronics Engineering",
+        icon: "☀️",
+        level: "Intermediate",
+        description: "A small solar charging prototype designed to demonstrate renewable energy conversion and power regulation.",
+        objectives: [
+            "Capture energy from a solar panel.",
+            "Regulate output for a suitable charging circuit.",
+            "Evaluate charging performance under different conditions."
+        ],
+        tools: "Solar panel, charge controller, battery, regulator, and meter",
+        keywords: "solar renewable energy phone charging"
+    },
+    {
+        id: 14,
+        title: "Automatic Streetlight Control System",
+        faculty: "Engineering and Technology",
+        programme: "Electrical and Electronics Engineering",
+        icon: "💡",
+        level: "Intermediate",
+        description: "A circuit that switches a light based on ambient brightness and configured operating conditions.",
+        objectives: [
+            "Measure ambient light levels.",
+            "Control a lamp automatically.",
+            "Evaluate energy-saving potential."
+        ],
+        tools: "Light sensor, microcontroller or comparator, and switching circuit",
+        keywords: "streetlight automatic light sensor"
+    },
+    {
+        id: 15,
+        title: "Digital Temperature Monitoring System",
+        faculty: "Engineering and Technology",
+        programme: "Computer Engineering",
+        icon: "🌡️",
+        level: "Intermediate",
+        description: "An electronic prototype that measures temperature and displays readings with optional threshold alerts.",
+        objectives: [
+            "Read temperature sensor data.",
+            "Display current measurements.",
+            "Trigger alerts when set thresholds are exceeded."
+        ],
+        tools: "Microcontroller, temperature sensor, display, and buzzer",
+        keywords: "temperature monitoring digital electronics"
+    },
+    {
+        id: 16,
+        title: "Automatic Irrigation Controller",
+        faculty: "Engineering and Technology",
+        programme: "Mechatronics Engineering",
+        icon: "🌱",
+        level: "Advanced",
+        description: "A prototype that uses soil moisture readings to control a small irrigation pump.",
+        objectives: [
+            "Measure soil moisture.",
+            "Control irrigation based on configured thresholds.",
+            "Compare watering patterns under test conditions."
+        ],
+        tools: "Microcontroller, moisture sensor, pump, and driver circuit",
+        keywords: "irrigation automation agriculture moisture"
+    },
+    {
+        id: 17,
+        title: "Electronic Queue Management System",
+        faculty: "Engineering and Technology",
+        programme: "Computer Engineering",
+        icon: "🔢",
+        level: "Intermediate",
+        description: "A display and control system for issuing queue numbers and organising service order.",
+        objectives: [
+            "Issue sequential queue numbers.",
+            "Display the number currently being served.",
+            "Improve orderliness in a service setting."
+        ],
+        tools: "Microcontroller or computer, display, buttons, and software",
+        keywords: "queue management electronic display"
+    },
+    {
+        id: 18,
+        title: "Energy Consumption Monitoring Prototype",
+        faculty: "Engineering and Technology",
+        programme: "Electrical and Electronics Engineering",
+        icon: "⚡",
+        level: "Advanced",
+        description: "A prototype for measuring electrical usage and displaying estimated energy consumption.",
+        objectives: [
+            "Collect electrical measurement data safely.",
+            "Display consumption readings.",
+            "Analyse energy use over time."
+        ],
+        tools: "Suitable isolated measurement hardware, microcontroller, and display",
+        keywords: "energy consumption electricity monitoring"
+    },
+    {
+        id: 19,
+        title: "Obstacle-Avoiding Robot",
+        faculty: "Engineering and Technology",
+        programme: "Mechatronics Engineering",
+        icon: "🤖",
+        level: "Advanced",
+        description: "A mobile robot prototype that detects nearby obstacles and adjusts its movement.",
+        objectives: [
+            "Detect obstacles using distance sensors.",
+            "Control motor movement.",
+            "Test navigation performance."
+        ],
+        tools: "Robot chassis, microcontroller, motor driver, and distance sensors",
+        keywords: "robot robotics obstacle avoidance"
+    },
+    {
+        id: 20,
+        title: "RFID-Based Access Control Prototype",
+        faculty: "Engineering and Technology",
+        programme: "Computer Engineering",
+        icon: "🪪",
+        level: "Advanced",
+        description: "A demonstration access system that uses RFID cards to identify authorised users.",
+        objectives: [
+            "Read registered RFID cards.",
+            "Compare card identifiers against authorised records.",
+            "Record access attempts."
+        ],
+        tools: "RFID reader, microcontroller, actuator, and local storage",
+        keywords: "RFID access control smart security"
+    },
+    {
+        id: 21,
+        title: "Crop Disease Identification Using Image Analysis",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Agricultural Science",
+        icon: "🌿",
+        level: "Advanced",
+        description: "A research prototype that explores image-based identification of selected crop leaf conditions.",
+        objectives: [
+            "Collect a labelled image dataset.",
+            "Explore image-processing or machine-learning methods.",
+            "Evaluate classification performance."
+        ],
+        tools: "Python, image-processing libraries, and a suitable dataset",
+        keywords: "crop disease agriculture plant leaf image"
+    },
+    {
+        id: 22,
+        title: "Soil Quality Assessment for Crop Production",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Soil Science",
+        icon: "🌾",
+        level: "Intermediate",
+        description: "A study of selected soil properties and their relationship with crop growth conditions.",
+        objectives: [
+            "Collect soil samples using a suitable protocol.",
+            "Measure selected soil properties.",
+            "Compare findings across sample locations."
+        ],
+        tools: "Soil sampling equipment and appropriate laboratory methods",
+        keywords: "soil quality fertility crop production"
+    },
+    {
+        id: 23,
+        title: "Farm Record Management Application",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Agricultural Economics",
+        icon: "🚜",
+        level: "Intermediate",
+        description: "An application for recording farm activities, input costs, harvest quantities and sales.",
+        objectives: [
+            "Record farm inputs and expenses.",
+            "Track production and harvest information.",
+            "Prepare basic farm performance reports."
+        ],
+        tools: "Web or mobile development tools and a data store",
+        keywords: "farm records agriculture management"
+    },
+    {
+        id: 24,
+        title: "Weather Data Analysis for Crop Planning",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Agricultural Science",
+        icon: "🌦️",
+        level: "Intermediate",
+        description: "An analysis of historical weather data to explore seasonal patterns relevant to crop planning.",
+        objectives: [
+            "Gather suitable historical weather data.",
+            "Identify seasonal patterns and trends.",
+            "Discuss possible implications for crop planning."
+        ],
+        tools: "Spreadsheet software or Python data-analysis libraries",
+        keywords: "weather climate crop planning rainfall"
+    },
+    {
+        id: 25,
+        title: "Food Storage Conditions Monitoring",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Food Science and Technology",
+        icon: "🥬",
+        level: "Intermediate",
+        description: "A project that monitors selected environmental conditions associated with food storage.",
+        objectives: [
+            "Monitor temperature or humidity.",
+            "Record changes over time.",
+            "Compare measurements with recommended storage conditions."
+        ],
+        tools: "Suitable sensors, data logger, and analysis software",
+        keywords: "food storage temperature humidity preservation"
+    },
+    {
+        id: 26,
+        title: "Farm Produce Price Information System",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Agricultural Economics",
+        icon: "📈",
+        level: "Intermediate",
+        description: "A platform for organising and comparing reported prices of selected agricultural products.",
+        objectives: [
+            "Record produce prices by market and date.",
+            "Compare prices across locations.",
+            "Present trends using tables or charts."
+        ],
+        tools: "Web technologies, database, and charting library",
+        keywords: "farm produce market price agriculture"
+    },
+    {
+        id: 27,
+        title: "Compost Production and Quality Evaluation",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Soil Science",
+        icon: "♻️",
+        level: "Intermediate",
+        description: "An experimental study comparing compost prepared from selected organic materials.",
+        objectives: [
+            "Prepare compost using a documented procedure.",
+            "Observe decomposition over time.",
+            "Evaluate selected quality indicators."
+        ],
+        tools: "Organic materials, containers, measuring tools, and safe procedures",
+        keywords: "compost organic waste soil fertility"
+    },
+    {
+        id: 28,
+        title: "Post-Harvest Loss Assessment",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Agricultural Science",
+        icon: "🌽",
+        level: "Intermediate",
+        description: "A study examining the scale and possible causes of post-harvest losses for a selected crop.",
+        objectives: [
+            "Identify stages where losses occur.",
+            "Collect data using an appropriate study method.",
+            "Recommend evidence-based reduction measures."
+        ],
+        tools: "Survey instruments, weighing equipment, and analysis software",
+        keywords: "post harvest loss crop storage"
+    },
+    {
+        id: 29,
+        title: "Water Quality Assessment of Selected Sources",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Environmental Science",
+        icon: "🌊",
+        level: "Intermediate",
+        description: "A study of selected physical and chemical water quality indicators from chosen sources.",
+        objectives: [
+            "Collect water samples safely and consistently.",
+            "Measure selected water quality parameters.",
+            "Compare results with appropriate reference standards."
+        ],
+        tools: "Approved sampling procedures and suitable testing equipment",
+        keywords: "water quality pollution environment"
+    },
+    {
+        id: 30,
+        title: "Household Waste Sorting and Recycling Study",
+        faculty: "Agriculture and Environmental Studies",
+        programme: "Environmental Science",
+        icon: "♻️",
+        level: "Beginner",
+        description: "A study of household waste composition, sorting habits and opportunities for recycling.",
+        objectives: [
+            "Identify common household waste categories.",
+            "Assess current sorting practices.",
+            "Recommend practical recycling improvements."
+        ],
+        tools: "Survey forms, observation sheets, and spreadsheet software",
+        keywords: "waste management recycling environment"
+    },
+    {
+        id: 31,
+        title: "Community Health Information Platform",
+        faculty: "Health and Medical Sciences",
+        programme: "Public Health",
+        icon: "🩺",
+        level: "Intermediate",
+        description: "An educational platform presenting reviewed community health information and preventive guidance.",
+        objectives: [
+            "Organise approved health education content.",
+            "Provide easy navigation by topic.",
+            "Evaluate usability with suitable participants."
+        ],
+        tools: "Web technologies and a content-management approach",
+        keywords: "community health education prevention"
+    },
+    {
+        id: 32,
+        title: "Clinic Patient Registration System",
+        faculty: "Health and Medical Sciences",
+        programme: "Health Information Management",
+        icon: "🗂️",
+        level: "Intermediate",
+        description: "A prototype for registering patients and organising basic administrative records securely.",
+        objectives: [
+            "Capture necessary registration details.",
+            "Organise records for authorised retrieval.",
+            "Demonstrate access controls and privacy safeguards."
+        ],
+        tools: "Database, backend framework, and secure user interface",
+        keywords: "patient registration clinic records"
+    },
+    {
+        id: 33,
+        title: "Health Appointment Reminder Application",
+        faculty: "Health and Medical Sciences",
+        programme: "Health Information Management",
+        icon: "📅",
+        level: "Intermediate",
+        description: "An application prototype that manages appointment schedules and provides reminder functionality.",
+        objectives: [
+            "Record appointment dates and times.",
+            "Organise upcoming appointments.",
+            "Demonstrate reminder delivery using a suitable method."
+        ],
+        tools: "Mobile or web development tools and notification services",
+        keywords: "health appointment reminder scheduling"
+    },
+    {
+        id: 34,
+        title: "Nutrition Awareness Among University Students",
+        faculty: "Health and Medical Sciences",
+        programme: "Nutrition and Dietetics",
+        icon: "🍎",
+        level: "Beginner",
+        description: "A research project exploring nutrition knowledge and reported dietary habits among students.",
+        objectives: [
+            "Develop an appropriate research questionnaire.",
+            "Collect data with required permissions.",
+            "Analyse patterns in knowledge and reported behaviour."
+        ],
+        tools: "Questionnaires, spreadsheet software, and statistical analysis",
+        keywords: "nutrition diet students food habits"
+    },
+    {
+        id: 35,
+        title: "First Aid Awareness Assessment",
+        faculty: "Health and Medical Sciences",
+        programme: "Public Health",
+        icon: "🩹",
+        level: "Beginner",
+        description: "A study of first aid awareness and training needs within a selected community or student group.",
+        objectives: [
+            "Assess basic first aid knowledge.",
+            "Identify reported training gaps.",
+            "Recommend suitable educational interventions."
+        ],
+        tools: "Survey questionnaire and statistical analysis software",
+        keywords: "first aid awareness training health"
+    },
+    {
+        id: 36,
+        title: "Health Facility Waiting-Time Analysis",
+        faculty: "Health and Medical Sciences",
+        programme: "Health Information Management",
+        icon: "⏱️",
+        level: "Intermediate",
+        description: "A study of patient waiting times and the operational factors associated with delays.",
+        objectives: [
+            "Collect anonymised time-based observations.",
+            "Calculate waiting-time summaries.",
+            "Identify potential areas for workflow improvement."
+        ],
+        tools: "Observation forms, spreadsheet software, and charts",
+        keywords: "hospital waiting time patient service"
+    },
+    {
+        id: 37,
+        title: "Public Health Campaign Evaluation",
+        faculty: "Health and Medical Sciences",
+        programme: "Public Health",
+        icon: "📣",
+        level: "Intermediate",
+        description: "An evaluation of awareness, reach or reported learning associated with a selected health campaign.",
+        objectives: [
+            "Define suitable campaign evaluation measures.",
+            "Collect relevant participant feedback.",
+            "Summarise findings and recommendations."
+        ],
+        tools: "Questionnaires, interviews, and statistical software",
+        keywords: "public health campaign awareness evaluation"
+    },
+    {
+        id: 38,
+        title: "Medical Supply Inventory Tracking",
+        faculty: "Health and Medical Sciences",
+        programme: "Health Information Management",
+        icon: "🧴",
+        level: "Intermediate",
+        description: "A system for tracking supplies, quantities, stock movement and expiry information.",
+        objectives: [
+            "Record supply information and quantities.",
+            "Track additions and withdrawals.",
+            "Flag low stock and approaching expiry dates."
+        ],
+        tools: "Database, web interface, and reporting tools",
+        keywords: "medical supplies inventory stock expiry"
+    },
+    {
+        id: 39,
+        title: "Workplace Ergonomics Awareness Study",
+        faculty: "Health and Medical Sciences",
+        programme: "Occupational Health and Safety",
+        icon: "🪑",
+        level: "Beginner",
+        description: "A study exploring awareness of ergonomic practices and reported workplace comfort.",
+        objectives: [
+            "Assess knowledge of ergonomic practices.",
+            "Collect suitable workplace observations or feedback.",
+            "Recommend practical awareness improvements."
+        ],
+        tools: "Questionnaires, observation checklist, and data analysis",
+        keywords: "ergonomics workplace posture occupational health"
+    },
+    {
+        id: 40,
+        title: "Electronic Health Education Quiz",
+        faculty: "Health and Medical Sciences",
+        programme: "Public Health",
+        icon: "📱",
+        level: "Beginner",
+        description: "An educational quiz application that tests understanding of selected health topics.",
+        objectives: [
+            "Present reviewed health education questions.",
+            "Provide immediate quiz feedback.",
+            "Summarise scores and learning progress."
+        ],
+        tools: "HTML, CSS, JavaScript, or a mobile development framework",
+        keywords: "health quiz education mobile learning"
+    },
+    {
+        id: 41,
+        title: "Small Business Sales Analysis",
+        faculty: "Business and Management",
+        programme: "Business Administration",
+        icon: "📊",
+        level: "Beginner",
+        description: "An analysis of sales records to identify product performance and changes over time.",
+        objectives: [
+            "Organise sales data for a selected business.",
+            "Calculate basic sales indicators.",
+            "Present useful trends and observations."
+        ],
+        tools: "Excel, Google Sheets, or Python",
+        keywords: "sales analysis business revenue"
+    },
+    {
+        id: 42,
+        title: "Customer Satisfaction and Service Quality",
+        faculty: "Business and Management",
+        programme: "Marketing",
+        icon: "⭐",
+        level: "Beginner",
+        description: "A research study examining customer satisfaction and factors associated with service quality.",
+        objectives: [
+            "Develop suitable survey questions.",
+            "Collect responses from an appropriate sample.",
+            "Analyse satisfaction patterns and possible improvements."
+        ],
+        tools: "Survey forms and statistical analysis software",
+        keywords: "customer satisfaction service quality marketing"
+    },
+    {
+        id: 43,
+        title: "Digital Marketing Strategy for Small Businesses",
+        faculty: "Business and Management",
+        programme: "Marketing",
+        icon: "📱",
+        level: "Intermediate",
+        description: "A project evaluating digital marketing practices and proposing a strategy for a selected business.",
+        objectives: [
+            "Review the business's current digital presence.",
+            "Identify target audiences and communication goals.",
+            "Develop measurable marketing recommendations."
+        ],
+        tools: "Analytics tools, spreadsheets, and content-planning software",
+        keywords: "digital marketing social media small business"
+    },
+    {
+        id: 44,
+        title: "Employee Motivation and Job Performance",
+        faculty: "Business and Management",
+        programme: "Human Resource Management",
+        icon: "👥",
+        level: "Intermediate",
+        description: "A study examining the relationship between employee motivation and self-reported or measured performance.",
+        objectives: [
+            "Review relevant motivation theories.",
+            "Collect data using an appropriate research design.",
+            "Analyse relationships between selected variables."
+        ],
+        tools: "Questionnaires and statistical analysis software",
+        keywords: "employee motivation performance human resources"
+    },
+    {
+        id: 45,
+        title: "Budget Planning and Financial Control",
+        faculty: "Business and Management",
+        programme: "Accounting",
+        icon: "🧾",
+        level: "Intermediate",
+        description: "A project investigating budgeting practices and financial control in a selected organisation.",
+        objectives: [
+            "Review budgeting and control procedures.",
+            "Collect suitable financial management data.",
+            "Identify practical improvements."
+        ],
+        tools: "Spreadsheet software, financial records, and research methods",
+        keywords: "accounting budgeting financial control"
+    },
+    {
+        id: 46,
+        title: "Entrepreneurship Intentions Among Undergraduates",
+        faculty: "Business and Management",
+        programme: "Entrepreneurship",
+        icon: "🚀",
+        level: "Beginner",
+        description: "A study exploring factors that influence students' interest in starting a business.",
+        objectives: [
+            "Identify relevant entrepreneurial factors.",
+            "Collect data from a suitable student sample.",
+            "Analyse responses and discuss implications."
+        ],
+        tools: "Survey questionnaires and statistical analysis",
+        keywords: "entrepreneurship students business startup"
+    },
+    {
+        id: 47,
+        title: "Customer Relationship Management Prototype",
+        faculty: "Business and Management",
+        programme: "Business Administration",
+        icon: "🤝",
+        level: "Intermediate",
+        description: "A simple system for organising customer records, interactions and follow-up activities.",
+        objectives: [
+            "Maintain customer contact records.",
+            "Record customer interactions.",
+            "Support follow-up and basic reporting."
+        ],
+        tools: "Web application framework and database",
+        keywords: "CRM customer relationship sales management"
+    },
+    {
+        id: 48,
+        title: "Internal Control and Fraud Risk Awareness",
+        faculty: "Business and Management",
+        programme: "Accounting",
+        icon: "🛡️",
+        level: "Intermediate",
+        description: "A study of internal control practices and perceived fraud risks in a selected organisation.",
+        objectives: [
+            "Review relevant internal control practices.",
+            "Collect appropriate organisational information.",
+            "Identify control gaps and possible recommendations."
+        ],
+        tools: "Research questionnaire, interviews, and spreadsheet software",
+        keywords: "accounting internal control fraud risk audit"
+    },
+    {
+        id: 49,
+        title: "Student Learning Resource Website",
+        faculty: "Education and Social Sciences",
+        programme: "Educational Technology",
+        icon: "🎓",
+        level: "Intermediate",
+        description: "A website that organises learning resources and supports access to educational materials.",
+        objectives: [
+            "Organise materials by course or subject.",
+            "Provide search and navigation features.",
+            "Evaluate the usefulness of the interface."
+        ],
+        tools: "HTML, CSS, JavaScript, and optional backend storage",
+        keywords: "education learning resources student website"
+    },
+    {
+        id: 50,
+        title: "Digital Literacy Among University Students",
+        faculty: "Education and Social Sciences",
+        programme: "Education",
+        icon: "🖥️",
+        level: "Beginner",
+        description: "A study of students' digital literacy skills and their use of technology for learning.",
+        objectives: [
+            "Identify suitable digital literacy indicators.",
+            "Assess selected student skills or practices.",
+            "Recommend relevant learning support."
+        ],
+        tools: "Questionnaires and statistical analysis software",
+        keywords: "digital literacy education students technology"
+    },
+    {
+        id: 51,
+        title: "Social Media Use and Academic Study Habits",
+        faculty: "Education and Social Sciences",
+        programme: "Sociology",
+        icon: "📲",
+        level: "Beginner",
+        description: "A research project examining reported social media use and study habits among students.",
+        objectives: [
+            "Define measures of social media use and study habits.",
+            "Collect data using an appropriate study design.",
+            "Analyse patterns while acknowledging study limitations."
+        ],
+        tools: "Survey questionnaire and statistical analysis software",
+        keywords: "social media academic performance study habits"
+    },
+    {
+        id: 52,
+        title: "School Records Management System",
+        faculty: "Education and Social Sciences",
+        programme: "Educational Technology",
+        icon: "🗃️",
+        level: "Intermediate",
+        description: "A digital application for organising selected administrative school records.",
+        objectives: [
+            "Organise approved categories of school records.",
+            "Support authorised record retrieval.",
+            "Produce basic summaries and reports."
+        ],
+        tools: "Web development technologies and a database",
+        keywords: "school records management education"
+    },
+    {
+        id: 53,
+        title: "Student Academic Advising Information System",
+        faculty: "Education and Social Sciences",
+        programme: "Education",
+        icon: "🧭",
+        level: "Intermediate",
+        description: "A prototype that organises advising information and helps students find relevant academic guidance.",
+        objectives: [
+            "Organise academic advising resources.",
+            "Provide search and navigation features.",
+            "Evaluate ease of use with suitable participants."
+        ],
+        tools: "Web technologies and a content-management system",
+        keywords: "academic advising student guidance"
+    },
+    {
+        id: 54,
+        title: "Community Development Needs Assessment",
+        faculty: "Education and Social Sciences",
+        programme: "Sociology",
+        icon: "🏘️",
+        level: "Intermediate",
+        description: "A study identifying perceived community needs and priorities in a selected location.",
+        objectives: [
+            "Define a clear community study area.",
+            "Collect data with appropriate permissions.",
+            "Rank reported needs and discuss possible responses."
+        ],
+        tools: "Interviews, questionnaires, and qualitative or quantitative analysis",
+        keywords: "community development social research needs assessment"
+    },
+    {
+        id: 55,
+        title: "Public Transport Service Satisfaction Study",
+        faculty: "Education and Social Sciences",
+        programme: "Geography",
+        icon: "🚌",
+        level: "Beginner",
+        description: "A study examining passenger satisfaction with selected aspects of public transport services.",
+        objectives: [
+            "Identify suitable service quality indicators.",
+            "Collect passenger feedback responsibly.",
+            "Summarise service strengths and areas for improvement."
+        ],
+        tools: "Questionnaires, observation, and spreadsheet software",
+        keywords: "transport passengers satisfaction public services"
+    },
+    {
+        id: 56,
+        title: "Geographic Mapping of Community Facilities",
+        faculty: "Education and Social Sciences",
+        programme: "Geography",
+        icon: "🗺️",
+        level: "Intermediate",
+        description: "A mapping project examining the distribution of selected community facilities in a defined area.",
+        objectives: [
+            "Collect or obtain suitable location data.",
+            "Map facility distribution.",
+            "Discuss spatial patterns and accessibility."
+        ],
+        tools: "QGIS or other GIS software and verified geographic data",
+        keywords: "GIS geography mapping facilities spatial analysis"
+    },
+    {
+        id: 57,
+        title: "Rainfall Trend Analysis",
+        faculty: "Pure and Applied Sciences",
+        programme: "Mathematics",
+        icon: "🌧️",
+        level: "Intermediate",
+        description: "A quantitative analysis of historical rainfall observations for a selected location.",
+        objectives: [
+            "Obtain suitable historical rainfall data.",
+            "Summarise seasonal and annual patterns.",
+            "Apply appropriate statistical methods."
+        ],
+        tools: "Excel, R, or Python",
+        keywords: "rainfall trend statistics climate analysis"
+    },
+    {
+        id: 58,
+        title: "Air Quality Monitoring Data Analysis",
+        faculty: "Pure and Applied Sciences",
+        programme: "Environmental Science",
+        icon: "🌫️",
+        level: "Intermediate",
+        description: "A project analysing available air quality measurements and examining changes across time or locations.",
+        objectives: [
+            "Identify reliable air quality data sources.",
+            "Summarise selected pollutant measurements.",
+            "Explore patterns and possible influencing factors."
+        ],
+        tools: "Spreadsheet software or Python data-analysis libraries",
+        keywords: "air quality pollution data environment"
+    },
+    {
+        id: 59,
+        title: "Mathematical Modelling of Population Growth",
+        faculty: "Pure and Applied Sciences",
+        programme: "Mathematics",
+        icon: "📐",
+        level: "Intermediate",
+        description: "A mathematical study comparing population growth models using suitable historical data.",
+        objectives: [
+            "Select and explain suitable growth models.",
+            "Fit models to a relevant dataset.",
+            "Compare model behaviour and limitations."
+        ],
+        tools: "Mathematical analysis, spreadsheets, or Python",
+        keywords: "mathematics population growth modelling"
+    },
+    {
+        id: 60,
+        title: "Renewable Energy Awareness and Adoption",
+        faculty: "Pure and Applied Sciences",
+        programme: "Physics",
+        icon: "🔋",
+        level: "Beginner",
+        description: "A research project exploring awareness of renewable energy and reported willingness to adopt selected technologies.",
+        objectives: [
+            "Review relevant renewable energy technologies.",
+            "Collect data on awareness and perceptions.",
+            "Discuss factors affecting potential adoption."
+        ],
+        tools: "Questionnaires, literature review, and statistical analysis",
+        keywords: "renewable energy solar adoption awareness physics"
+    }
+];
+
+/* ==========================================================
+   FEATURED CAROUSEL DATA
+   ========================================================== */
+
+const featuredSlides = [
+    {
+        icon: "💻",
+        category: "Computing and Technology",
+        title: "Build Something That Matters",
+        description: "Explore software, web development, information systems and other technology projects."
+    },
+    {
+        icon: "⚡",
+        category: "Engineering and Innovation",
+        title: "Turn Ideas Into Prototypes",
+        description: "Discover practical ideas involving electronics, embedded systems, automation and renewable energy."
+    },
+    {
+        icon: "🌱",
+        category: "Agriculture and Environment",
+        title: "Solve Real-World Problems",
+        description: "Explore projects related to farming, environmental sustainability, food systems and water quality."
+    },
+    {
+        icon: "🩺",
+        category: "Health and Social Impact",
+        title: "Create Meaningful Solutions",
+        description: "Find research and technology ideas that address community needs, health education and service delivery."
+    }
+];
+
+/* ==========================================================
+   STATE
+   ========================================================== */
+
+const STORAGE_KEY = "ibrophy_saved_projects_v1";
+
+let savedProjects = loadSavedProjects();
+let currentProjectId = null;
+let showingSavedOnly = false;
+let currentSlide = 0;
+let toastTimer = null;
+let lastFocusedElement = null;
+
+/* ==========================================================
+   DOM REFERENCES
+   ========================================================== */
+
+const projectGrid = document.getElementById("projectGrid");
+const searchInput = document.getElementById("searchInput");
+const facultyFilter = document.getElementById("facultyFilter");
+const programmeFilter = document.getElementById("programmeFilter");
+const resultsText = document.getElementById("resultsText");
+const savedCount = document.getElementById("savedCount");
+
+const projectModal = document.getElementById("projectModal");
+const projectModalTitle = document.getElementById("projectModalTitle");
+const projectModalBody = document.getElementById("projectModalBody");
+const modalSaveButton = document.getElementById("modalSaveButton");
+const modalEnquiryButton = document.getElementById("modalEnquiryButton");
+
+const noResultsModal = document.getElementById("noResultsModal");
+const noResultsMessage = document.getElementById("noResultsMessage");
+const contactChoiceModal = document.getElementById("contactChoiceModal");
+
+const toast = document.getElementById("toast");
+
+/* ==========================================================
+   SAFE TEXT HELPERS
+   ========================================================== */
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+        const replacements = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        };
+
+        return replacements[character];
+    });
+}
+
+function normaliseText(value) {
+    return String(value || "").trim().toLowerCase();
+}
+
+/* ==========================================================
+   SAVED PROJECT STORAGE
+   ========================================================== */
+
+function loadSavedProjects() {
+    try {
+        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+        if (!Array.isArray(stored)) {
+            return [];
+        }
+
+        return stored
+            .map(Number)
+            .filter(id => projects.some(project => project.id === id));
+    } catch (error) {
+        return [];
+    }
+}
+
+function persistSavedProjects() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProjects));
+        return true;
+    } catch (error) {
+        showToast("Your browser could not save changes. Check your browser storage settings.");
+        return false;
+    }
+}
+
+function isSaved(projectId) {
+    return savedProjects.includes(Number(projectId));
+}
+
+function updateSavedCount() {
+    savedCount.textContent = savedProjects.length;
+
+    document.getElementById("savedFilterButton").setAttribute(
+        "aria-label",
+        "Show saved projects, " + savedProjects.length + " saved"
+    );
+}
+
+function toggleSave(projectId) {
+    projectId = Number(projectId);
+
+    if (isSaved(projectId)) {
+        savedProjects = savedProjects.filter(id => id !== projectId);
+        persistSavedProjects();
+        showToast("Project removed from your saved list.");
+    } else {
+        savedProjects.push(projectId);
+        persistSavedProjects();
+        showToast("Project saved successfully.");
+    }
+
+    updateSavedCount();
+    renderProjects();
+
+    if (currentProjectId === projectId && projectModal.classList.contains("open")) {
+        updateModalSaveButton();
+    }
+}
+
+/* ==========================================================
+   FILTER SETUP
+   ========================================================== */
+
+function populateFilters() {
+    const faculties = [...new Set(projects.map(project => project.faculty))].sort();
+    const programmes = [...new Set(projects.map(project => project.programme))].sort();
+
+    faculties.forEach(faculty => {
+        const option = document.createElement("option");
+        option.value = faculty;
+        option.textContent = faculty;
+        facultyFilter.appendChild(option);
+    });
+
+    programmes.forEach(programme => {
+        const option = document.createElement("option");
+        option.value = programme;
+        option.textContent = programme;
+        programmeFilter.appendChild(option);
+    });
+}
+
+function updateProgrammeOptions() {
+    const selectedFaculty = facultyFilter.value;
+    const previousProgramme = programmeFilter.value;
+
+    const availableProgrammes = [...new Set(
+        projects
+            .filter(project =>
+                selectedFaculty === "all" ||
+                project.faculty === selectedFaculty
+            )
+            .map(project => project.programme)
+    )].sort();
+
+    programmeFilter.innerHTML = '<option value="all">All programmes</option>';
+
+    availableProgrammes.forEach(programme => {
+        const option = document.createElement("option");
+        option.value = programme;
+        option.textContent = programme;
+        programmeFilter.appendChild(option);
+    });
+
+    if (availableProgrammes.includes(previousProgramme)) {
+        programmeFilter.value = previousProgramme;
+    } else {
+        programmeFilter.value = "all";
+    }
+}
+
+/* ==========================================================
+   PROJECT FILTERING
+   ========================================================== */
+
+function getFilteredProjects() {
+    const query = normaliseText(searchInput.value);
+    const selectedFaculty = facultyFilter.value;
+    const selectedProgramme = programmeFilter.value;
+
+    return projects.filter(project => {
+        const searchableText = normaliseText([
+            project.title,
+            project.faculty,
+            project.programme,
+            project.description,
+            project.level,
+            project.tools,
+            project.keywords
+        ].join(" "));
+
+        const matchesSearch = !query || searchableText.includes(query);
+
+        const matchesFaculty =
+            selectedFaculty === "all" ||
+            project.faculty === selectedFaculty;
+
+        const matchesProgramme =
+            selectedProgramme === "all" ||
+            project.programme === selectedProgramme;
+
+        const matchesSaved =
+            !showingSavedOnly ||
+            isSaved(project.id);
+
+        return matchesSearch &&
+            matchesFaculty &&
+            matchesProgramme &&
+            matchesSaved;
+    });
+}
+
+/* ==========================================================
+   PROJECT CARD RENDERING
+   ========================================================== */
+
+function renderProjects() {
+    const filteredProjects = getFilteredProjects();
+
+    projectGrid.innerHTML = "";
+
+    resultsText.innerHTML =
+        "Showing <strong>" + filteredProjects.length +
+        "</strong> of <strong>" + projects.length +
+        "</strong> project ideas" +
+        (showingSavedOnly ? " · Saved projects" : "");
+
+    updateSavedCount();
+
+    if (filteredProjects.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty-inline";
+
+        empty.innerHTML = `
+            <div class="empty-icon">🔎</div>
+            <h3>No matching projects</h3>
+            <p>Try another keyword or adjust your faculty and programme filters.</p>
+            <br>
+            <button class="btn btn-primary" type="button" id="inlineResetButton">
+                Reset Filters
+            </button>
+        `;
+
+        projectGrid.appendChild(empty);
+
+        document.getElementById("inlineResetButton").addEventListener(
+            "click",
+            resetFilters
+        );
+
+        return;
+    }
+
+    filteredProjects.forEach(project => {
+        const card = document.createElement("article");
+        card.className = "project-card";
+
+        const saved = isSaved(project.id);
+
+        card.innerHTML = `
+            <div class="card-top">
+                <div class="card-icon" aria-hidden="true">${escapeHTML(project.icon)}</div>
+
+                <div class="card-meta">
+                    <span class="pill pill-blue">${escapeHTML(project.level)}</span>
+                    <span class="pill">${escapeHTML(project.programme)}</span>
+                </div>
+
+                <h3>${escapeHTML(project.title)}</h3>
+
+                <p class="description">${escapeHTML(project.description)}</p>
+            </div>
+
+            <div class="card-bottom">
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-action="details"
+                    data-id="${project.id}">
+                    View Details
+                </button>
+
+                <button
+                    class="btn btn-outline save-btn ${saved ? "saved" : ""}"
+                    type="button"
+                    data-action="save"
+                    data-id="${project.id}"
+                    aria-label="${saved ? "Remove saved project" : "Save project"}"
+                    aria-pressed="${saved}">
+                    ${saved ? "♥" : "♡"}
+                </button>
+            </div>
+        `;
+
+        projectGrid.appendChild(card);
+    });
+}
+
+/* ==========================================================
+   PROJECT DETAIL MODAL
+   ========================================================== */
+
+function openProjectDetails(projectId) {
+    const project = projects.find(item => item.id === Number(projectId));
+
+    if (!project) {
+        showToast("This project could not be found.");
+        return;
+    }
+
+    currentProjectId = project.id;
+
+    projectModalTitle.textContent = project.title;
+
+    projectModalBody.innerHTML = `
+        <div class="detail-icon">${escapeHTML(project.icon)}</div>
+
+        <div class="detail-tags">
+            <span class="pill pill-blue">${escapeHTML(project.level)}</span>
+            <span class="pill">${escapeHTML(project.faculty)}</span>
+            <span class="pill">${escapeHTML(project.programme)}</span>
+        </div>
+
+        <div class="detail-section">
+            <h3>Project Overview</h3>
+            <p>${escapeHTML(project.description)}</p>
+        </div>
+
+        <div class="detail-section">
+            <h3>Suggested Objectives</h3>
+            <ul>
+                ${project.objectives.map(objective =>
+                    `<li>${escapeHTML(objective)}</li>`
+                ).join("")}
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h3>Possible Tools and Resources</h3>
+            <p>${escapeHTML(project.tools)}</p>
+        </div>
+
+        <div class="detail-section">
+            <h3>Academic Note</h3>
+            <p>
+                This topic is a starting point. Confirm the scope, research questions,
+                methods and requirements with your supervisor before proceeding.
+                Adapt the project to your institution's academic guidelines.
+            </p>
+        </div>
+    `;
+
+    updateModalSaveButton();
+    openModal(projectModal);
+}
+
+function updateModalSaveButton() {
+    if (!currentProjectId) {
+        return;
+    }
+
+    const saved = isSaved(currentProjectId);
+
+    modalSaveButton.textContent = saved
+        ? "♥ Saved — Remove"
+        : "♡ Save Project";
+}
+
+/* ==========================================================
+   MODAL MANAGEMENT
+   ========================================================== */
+
+function openModal(modalElement) {
+    lastFocusedElement = document.activeElement;
+
+    modalElement.classList.add("open");
+    document.body.classList.add("modal-open");
+
+    const focusTarget = modalElement.querySelector(
+        "button, input, select, textarea, a[href]"
+    );
+
+    if (focusTarget) {
+        setTimeout(() => focusTarget.focus(), 20);
+    }
+}
+
+function closeModal(modalElement) {
+    modalElement.classList.remove("open");
+
+    if (!document.querySelector(".modal-backdrop.open")) {
+        document.body.classList.remove("modal-open");
+    }
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
+    }
+}
+
+function closeAllModals() {
+    document.querySelectorAll(".modal-backdrop.open").forEach(modal => {
+        modal.classList.remove("open");
+    });
+
+    document.body.classList.remove("modal-open");
+}
+
+/* ==========================================================
+   NO-RESULTS POPUP
+   ========================================================== */
+
+function showNoResultsPopup() {
+    const query = searchInput.value.trim();
+
+    if (query) {
+        noResultsMessage.textContent =
+            'No projects matched "' + query +
+            '". Try a different keyword or reset your filters.';
+    } else {
+        noResultsMessage.textContent =
+            "No projects match your current filters. Try another faculty or programme, or reset your search.";
+    }
+
+    openModal(noResultsModal);
+}
+
+function runSearch() {
+    renderProjects();
+
+    if (getFilteredProjects().length === 0) {
+        showNoResultsPopup();
+    }
+}
+
+function resetFilters() {
+    searchInput.value = "";
+    facultyFilter.value = "all";
+
+    updateProgrammeOptions();
+    programmeFilter.value = "all";
+
+    showingSavedOnly = false;
+    updateViewTabs();
+    renderProjects();
+
+    showToast("Search filters have been reset.");
+}
+
+function updateViewTabs() {
+    document.getElementById("allProjectsTab").classList.toggle(
+        "active",
+        !showingSavedOnly
+    );
+
+    document.getElementById("savedProjectsTab").classList.toggle(
+        "active",
+        showingSavedOnly
+    );
+
+    document.getElementById("savedFilterButton").classList.toggle(
+        "active",
+        showingSavedOnly
+    );
+}
+
+function showSavedProjects() {
+    showingSavedOnly = true;
+    updateViewTabs();
+    renderProjects();
+
+    document.getElementById("projects").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+/* ==========================================================
+   CONTACT METHOD SELECTION
+   ========================================================== */
+
+function openContactChoice(projectId = null) {
+    if (projectId !== null) {
+        currentProjectId = Number(projectId);
+    }
+
+    openModal(contactChoiceModal);
+}
+
+function buildEnquiryMessage() {
+    const project = projects.find(
+        item => item.id === Number(currentProjectId)
+    );
+
+    let message =
+        "Hello " + CONFIG.businessName + ",\n\n" +
+        "I would like to make an enquiry about student project ideas.";
+
+    if (project) {
+        message +=
+            "\n\nProject Title: " + project.title +
+            "\nFaculty: " + project.faculty +
+            "\nProgramme: " + project.programme +
+            "\n\nPlease provide more information about this project idea.";
+    } else {
+        message += "\n\nPlease provide information about your project idea services.";
+    }
+
+    message += "\n\nThank you.";
+
+    return message;
+}
+
+function continueWithWhatsApp() {
+    const phone = CONFIG.whatsappNumber.replace(/\D/g, "");
+
+    if (!phone || phone.length < 8 || phone === "2348012345678") {
+        showToast("Please add your correct WhatsApp number in the website configuration.");
+        return;
+    }
+
+    const message = buildEnquiryMessage();
+    const url =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+    closeModal(contactChoiceModal);
+}
+
+function continueWithEmail() {
+    const email = CONFIG.emailAddress.trim();
+
+    if (
+        !email ||
+        email === "your-email@example.com" ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+        showToast("Please add your correct email address in the website configuration.");
+        return;
+    }
+
+    const project = projects.find(
+        item => item.id === Number(currentProjectId)
+    );
+
+    const subject = project
+        ? "Project Enquiry: " + project.title
+        : "Student Project Ideas Enquiry";
+
+    const body = buildEnquiryMessage();
+
+    const url =
+        "mailto:" + email +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.location.href = url;
+    closeModal(contactChoiceModal);
+}
+
+/* ==========================================================
+   TOAST NOTIFICATIONS
+   ========================================================== */
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    if (toastTimer) {
+        clearTimeout(toastTimer);
+    }
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3200);
+}
+
+/* ==========================================================
+   HERO CAROUSEL
+   ========================================================== */
+
+function renderCarouselDots() {
+    const dotsContainer = document.getElementById("carouselDots");
+    dotsContainer.innerHTML = "";
+
+    featuredSlides.forEach((slide, index) => {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className =
+            "carousel-dot" + (index === currentSlide ? " active" : "");
+
+        button.setAttribute("aria-label", "Show slide " + (index + 1));
+
+        button.addEventListener("click", () => {
+            currentSlide = index;
+            renderCarousel();
+        });
+
+        dotsContainer.appendChild(button);
+    });
+}
+
+function renderCarousel() {
+    const slide = featuredSlides[currentSlide];
+
+    document.getElementById("carouselIcon").textContent = slide.icon;
+    document.getElementById("carouselCategory").textContent = slide.category;
+    document.getElementById("carouselTitle").textContent = slide.title;
+    document.getElementById("carouselDescription").textContent = slide.description;
+
+    renderCarouselDots();
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % featuredSlides.length;
+    renderCarousel();
+}
+
+function previousSlide() {
+    currentSlide =
+        (currentSlide - 1 + featuredSlides.length) % featuredSlides.length;
+
+    renderCarousel();
+}
+
+/* ==========================================================
+   EVENT LISTENERS
+   ========================================================== */
+
+searchInput.addEventListener("input", renderProjects);
+
+document.getElementById("searchButton").addEventListener("click", runSearch);
+
+searchInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        runSearch();
+    }
+});
+
+facultyFilter.addEventListener("change", () => {
+    updateProgrammeOptions();
+    renderProjects();
+});
+
+programmeFilter.addEventListener("change", renderProjects);
+
+document.getElementById("resetFilters").addEventListener(
+    "click",
+    resetFilters
+);
+
+document.getElementById("savedFilterButton").addEventListener("click", () => {
+    showingSavedOnly = !showingSavedOnly;
+    updateViewTabs();
+    renderProjects();
+});
+
+document.getElementById("allProjectsTab").addEventListener("click", () => {
+    showingSavedOnly = false;
+    updateViewTabs();
+    renderProjects();
+});
+
+document.getElementById("savedProjectsTab").addEventListener("click", () => {
+    showingSavedOnly = true;
+    updateViewTabs();
+    renderProjects();
+});
+
+projectGrid.addEventListener("click", event => {
+    const button = event.target.closest("button[data-action]");
+
+    if (!button) {
+        return;
+    }
+
+    const action = button.dataset.action;
+    const projectId = Number(button.dataset.id);
+
+    if (action === "details") {
+        openProjectDetails(projectId);
+    }
+
+    if (action === "save") {
+        toggleSave(projectId);
+    }
+});
+
+modalSaveButton.addEventListener("click", () => {
+    if (currentProjectId !== null) {
+        toggleSave(currentProjectId);
+    }
+});
+
+modalEnquiryButton.addEventListener("click", () => {
+    if (currentProjectId !== null) {
+        openContactChoice(currentProjectId);
+    }
+});
+
+document.getElementById("whatsappOption").addEventListener(
+    "click",
+    continueWithWhatsApp
+);
+
+document.getElementById("emailOption").addEventListener(
+    "click",
+    continueWithEmail
+);
+
+document.getElementById("closeNoResults").addEventListener("click", () => {
+    closeModal(noResultsModal);
+    searchInput.focus();
+});
+
+document.querySelectorAll("[data-close]").forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = document.getElementById(button.dataset.close);
+
+        if (modal) {
+            closeModal(modal);
+        }
+    });
+});
+
+document.querySelectorAll(".modal-backdrop").forEach(backdrop => {
+    backdrop.addEventListener("click", event => {
+        if (event.target === backdrop) {
+            closeModal(backdrop);
+        }
+    });
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        const openModals = document.querySelectorAll(".modal-backdrop.open");
+
+        if (openModals.length) {
+            closeModal(openModals[openModals.length - 1]);
+        }
+
+        document.getElementById("navLinks").classList.remove("open");
+        document.getElementById("menuToggle").setAttribute("aria-expanded", "false");
+    }
+});
+
+document.getElementById("carouselNext").addEventListener("click", nextSlide);
+document.getElementById("carouselPrev").addEventListener("click", previousSlide);
+
+document.getElementById("menuToggle").addEventListener("click", () => {
+    const nav = document.getElementById("navLinks");
+    const toggle = document.getElementById("menuToggle");
+    const isOpen = nav.classList.toggle("open");
+
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    toggle.textContent = isOpen ? "×" : "☰";
+});
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+        document.getElementById("menuToggle").setAttribute("aria-expanded", "false");
+        document.getElementById("menuToggle").textContent = "☰";
+    });
+});
+
+/* ==========================================================
+   INITIALISE WEBSITE
+   ========================================================== */
+
+function initialiseWebsite() {
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    populateFilters();
+    updateProgrammeOptions();
+    updateSavedCount();
+    updateViewTabs();
+    renderCarousel();
+    renderProjects();
+}
+
+initialiseWebsite();
+</script>
+
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
